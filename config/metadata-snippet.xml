@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="MetadataService" targetNamespace="http://rechtspraak.nl/MetadataService/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:dt="http://rechtspraak.nl/Service/DataTypes"
+>
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/DataTypes">
+
+            <xs:complexType name="ExtensibleDataObject">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:element name="ExtensibleDataObject" type="dt:ExtensibleDataObject"/>
+            <xs:complexType name="CodelijstWaarde">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="GeldigTotEnMet" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="GeldigVanaf" nillable="true" type="xs:dateTime"/>
+                    <xs:element name="Titel" type="xs:string"/>
+                    <xs:element name="Waarde" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="CodelijstWaarde" type="dt:CodelijstWaarde"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Metadata">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:complexType name="CodelijstWaarden">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CodelijstWaarde" nillable="true" type="dt:CodelijstWaarde"  />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="CodelijstWaarden" />
+        </xs:schema>
+    </wsdl:types>
+</wsdl:definitions>
