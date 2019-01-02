@@ -1,0 +1,3 @@
+ToezichtS2S\Bericht\v2\MaakAanVerzoek:
+    xml_root_name: MaakAanVerzoek
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'

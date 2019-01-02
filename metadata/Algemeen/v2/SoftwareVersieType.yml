@@ -1,0 +1,32 @@
+ToezichtS2S\Algemeen\v2\SoftwareVersieType:
+    properties:
+        leverancier:
+            expose: true
+            access_type: public_method
+            serialized_name: Leverancier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getLeverancier
+                setter: setLeverancier
+            type: string
+        pakketnaam:
+            expose: true
+            access_type: public_method
+            serialized_name: Pakketnaam
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getPakketnaam
+                setter: setPakketnaam
+            type: string
+        versie:
+            expose: true
+            access_type: public_method
+            serialized_name: Versie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getVersie
+                setter: setVersie
+            type: string

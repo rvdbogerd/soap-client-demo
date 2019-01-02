@@ -1,0 +1,12 @@
+ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnType:
+    properties:
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getType
+                setter: setType
+            type: string

@@ -1,0 +1,22 @@
+ToezichtS2S\Algemeen\v2\AntwoordType:
+    properties:
+        operatieContext:
+            expose: true
+            access_type: public_method
+            serialized_name: OperatieContext
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getOperatieContext
+                setter: setOperatieContext
+            type: ToezichtS2S\Algemeen\v2\AntwoordContextType
+        verwerkingsresultaat:
+            expose: true
+            access_type: public_method
+            serialized_name: Verwerkingsresultaat
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getVerwerkingsresultaat
+                setter: setVerwerkingsresultaat
+            type: ToezichtS2S\Algemeen\v2\VerwerkingsresultaatType

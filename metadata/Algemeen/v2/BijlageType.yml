@@ -1,0 +1,22 @@
+ToezichtS2S\Algemeen\v2\BijlageType:
+    properties:
+        contentType:
+            expose: true
+            access_type: public_method
+            serialized_name: ContentType
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getContentType
+                setter: setContentType
+            type: string
+        inhoud:
+            expose: true
+            access_type: public_method
+            serialized_name: Inhoud
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getInhoud
+                setter: setInhoud
+            type: \AnySimpleType

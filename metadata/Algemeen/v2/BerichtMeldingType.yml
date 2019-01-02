@@ -1,0 +1,12 @@
+ToezichtS2S\Algemeen\v2\BerichtMeldingType:
+    properties:
+        onderdeel:
+            expose: true
+            access_type: public_method
+            serialized_name: Onderdeel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getOnderdeel
+                setter: setOnderdeel
+            type: string

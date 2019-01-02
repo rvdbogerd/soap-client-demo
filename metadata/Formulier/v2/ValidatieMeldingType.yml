@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\ValidatieMeldingType:
+    properties:
+        gegeven:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegeven
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getGegeven
+                setter: setGegeven
+            type: string
+        regelnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Regelnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getRegelnummer
+                setter: setRegelnummer
+            type: int

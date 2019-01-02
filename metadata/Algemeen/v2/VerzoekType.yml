@@ -1,0 +1,12 @@
+ToezichtS2S\Algemeen\v2\VerzoekType:
+    properties:
+        operatieContext:
+            expose: true
+            access_type: public_method
+            serialized_name: OperatieContext
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getOperatieContext
+                setter: setOperatieContext
+            type: ToezichtS2S\Algemeen\v2\VerzoekContextType

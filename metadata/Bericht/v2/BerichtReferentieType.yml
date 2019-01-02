@@ -1,0 +1,12 @@
+ToezichtS2S\Bericht\v2\BerichtReferentieType:
+    properties:
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnType

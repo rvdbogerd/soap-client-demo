@@ -1,0 +1,32 @@
+ToezichtS2S\Algemeen\v2\ObjectReferentieType:
+    properties:
+        kenmerken:
+            expose: true
+            access_type: public_method
+            serialized_name: Kenmerken
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getKenmerken
+                setter: setKenmerken
+            type: array<ToezichtS2S\Algemeen\v2\ObjectReferentieKenmerkCollectieType\KenmerkAType>
+            xml_list:
+                inline: false
+                entry_name: Kenmerk
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+        mogelijkeModelVersies:
+            expose: true
+            access_type: public_method
+            serialized_name: MogelijkeModelVersies
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getMogelijkeModelVersies
+                setter: setMogelijkeModelVersies
+            type: array<int>
+            xml_list:
+                inline: false
+                entry_name: ModelVersie
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'

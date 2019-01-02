@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="BerichtService" targetNamespace="http://rechtspraak.nl/ToezichtS2S/Bericht/v2"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Bericht/v2"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+    <wsp:Policy wsu:Id="soap12mtom_BerichtService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsoma:OptimizedMimeSerialization
+                        xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:X509Token
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:RequireThumbprintReference/>
+                                <sp:WssX509V3Token10/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                            <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                        </sp:SignedParts>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportRefThumbprint/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportIssuedTokens/>
+                        <sp:RequireClientEntropy/>
+                        <sp:RequireServerEntropy/>
+                    </wsp:Policy>
+                </sp:Trust10>
+                <wsaw:UsingAddressing/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/ToezichtS2S/Bericht/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+            <xs:element name="Raadpleeg">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="verzoek" nillable="true" type="tns:RaadpleegVerzoek"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="RaadpleegVerzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:Verzoek" xmlns:q1="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="BehoortBij" type="q1:ObjectIdentificatieEnType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="RaadpleegVerzoek" type="tns:RaadpleegVerzoek"/>
+            <xs:element name="RaadpleegResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RaadpleegResult" nillable="true" type="tns:RaadpleegAntwoord"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="RaadpleegAntwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q2:Antwoord" xmlns:q2="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Berichten" type="tns:ArrayOfBerichtReferentie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="RaadpleegAntwoord" type="tns:RaadpleegAntwoord"/>
+            <xs:complexType name="ArrayOfBerichtReferentie">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="BerichtReferentie" nillable="true"
+                                type="tns:BerichtReferentie"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ArrayOfBerichtReferentie" type="tns:ArrayOfBerichtReferentie"/>
+            <xs:complexType name="BerichtReferentie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q3:ObjectIdentificatie"
+                                  xmlns:q3="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="BehoortBij" type="q3:ObjectIdentificatieEnType"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BerichtReferentie" type="tns:BerichtReferentie"/>
+            <xs:element name="HaalOp">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="verzoek" nillable="true" type="tns:HaalOpVerzoek"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="HaalOpVerzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q4:Verzoek" xmlns:q4="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Object" type="q4:ObjectIdentificatie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="HaalOpVerzoek" type="tns:HaalOpVerzoek"/>
+            <xs:element name="HaalOpResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="HaalOpResult" nillable="true" type="tns:HaalOpAntwoord"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="HaalOpAntwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q5:Antwoord" xmlns:q5="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Bericht" type="tns:BerichtDetail"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="HaalOpAntwoord" type="tns:HaalOpAntwoord"/>
+            <xs:complexType name="BerichtDetail">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q6:ObjectIdentificatie"
+                                  xmlns:q6="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Aan" type="tns:GeadresseerdePartij"/>
+                            <xs:element name="Auteur" type="q6:String80"/>
+                            <xs:element name="BehoortBij" type="q6:ObjectReferentie"/>
+                            <xs:element minOccurs="0" name="Bijlagen" nillable="true" type="tns:ArrayOfBerichtBijlage"/>
+                            <xs:element name="DatumOntvangen" type="xs:dateTime"/>
+                            <xs:element minOccurs="0" name="InAntwoordOp" nillable="true" type="tns:BerichtReferentie"/>
+                            <xs:element name="IndicatieSpoed" type="xs:boolean"/>
+                            <xs:element name="IndicatieVertrouwelijk" type="xs:boolean"/>
+                            <xs:element name="Inhoud" type="q6:String20k"/>
+                            <xs:element name="Onderwerp" type="q6:String200"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BerichtDetail" type="tns:BerichtDetail"/>
+            <xs:simpleType name="GeadresseerdePartij">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="TZ:Toezichthouder">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="TZ:Uitvoerder">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="GeadresseerdePartij" type="tns:GeadresseerdePartij"/>
+            <xs:complexType name="ArrayOfBerichtBijlage">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="BerichtBijlage" nillable="true"
+                                type="tns:BerichtBijlage"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ArrayOfBerichtBijlage" type="tns:ArrayOfBerichtBijlage"/>
+            <xs:complexType name="BerichtBijlage">
+                <xs:sequence>
+                    <xs:element name="Beschrijving" type="q7:String300"
+                                xmlns:q7="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+                    <xs:element name="Bijlage" type="q8:Bijlage"
+                                xmlns:q8="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+                    <xs:element name="Volgnummer" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="BerichtBijlage" type="tns:BerichtBijlage"/>
+            <xs:element name="MaakAan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="verzoek" nillable="true" type="tns:MaakAanVerzoek"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="MaakAanVerzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q9:Verzoek" xmlns:q9="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Auteur" type="q9:String80"/>
+                            <xs:element name="BehoortBij" type="q9:ObjectIdentificatieEnType"/>
+                            <xs:element minOccurs="0" name="Bijlagen" nillable="true" type="tns:ArrayOfBerichtBijlage"/>
+                            <xs:element minOccurs="0" name="InAntwoordOp" nillable="true" type="q9:IdentificatieCode"/>
+                            <xs:element minOccurs="0" name="IndicatieSpoed" nillable="true" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="IndicatieVertrouwelijk" nillable="true" type="xs:boolean"/>
+                            <xs:element name="Inhoud" type="q9:String20k"/>
+                            <xs:element name="Onderwerp" type="q9:String200"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="MaakAanVerzoek" type="tns:MaakAanVerzoek"/>
+            <xs:element name="MaakAanResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="MaakAanResult" nillable="true"
+                                    type="q10:StandaardMaakAanAntwoord"
+                                    xmlns:q10="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+                   targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+            <xs:element name="anyType" type="xs:anyType"/>
+            <xs:element name="anyURI" type="xs:anyURI"/>
+            <xs:element name="base64Binary" type="xs:base64Binary"/>
+            <xs:element name="boolean" type="xs:boolean"/>
+            <xs:element name="byte" type="xs:byte"/>
+            <xs:element name="dateTime" type="xs:dateTime"/>
+            <xs:element name="decimal" type="xs:decimal"/>
+            <xs:element name="double" type="xs:double"/>
+            <xs:element name="float" type="xs:float"/>
+            <xs:element name="int" type="xs:int"/>
+            <xs:element name="long" type="xs:long"/>
+            <xs:element name="QName" type="xs:QName"/>
+            <xs:element name="short" type="xs:short"/>
+            <xs:element name="string" type="xs:string"/>
+            <xs:element name="unsignedByte" type="xs:unsignedByte"/>
+            <xs:element name="unsignedInt" type="xs:unsignedInt"/>
+            <xs:element name="unsignedLong" type="xs:unsignedLong"/>
+            <xs:element name="unsignedShort" type="xs:unsignedShort"/>
+            <xs:element name="char" type="tns:char"/>
+            <xs:simpleType name="char">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:element name="duration" type="tns:duration"/>
+            <xs:simpleType name="duration">
+                <xs:restriction base="xs:duration">
+                    <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+                    <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+                    <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="guid" type="tns:guid"/>
+            <xs:simpleType name="guid">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:attribute name="FactoryType" type="xs:QName"/>
+            <xs:attribute name="Id" type="xs:ID"/>
+            <xs:attribute name="Ref" type="xs:IDREF"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:import namespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+            <xs:complexType name="Verzoek">
+                <xs:sequence>
+                    <xs:element name="OperatieContext" type="tns:VerzoekContext"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Verzoek" type="tns:Verzoek"/>
+            <xs:complexType name="VerzoekContext">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:AntwoordContext">
+                        <xs:sequence>
+                            <xs:element name="Organisatie" type="tns:IdentificatieCode"/>
+                            <xs:element name="Register" type="tns:SoortPersoonsRegister"/>
+                            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="VerzoekContext" type="tns:VerzoekContext"/>
+            <xs:complexType name="AntwoordContext">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ExterneReferentie" nillable="true" type="tns:String50"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="AntwoordContext" type="tns:AntwoordContext"/>
+            <xs:simpleType name="SoortPersoonsRegister">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="NHR">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="BSN">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="RSIN">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1003
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="NHR Vestiging">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1004
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="OIN">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1005
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="BAR">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1006
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Rechtspraak">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1000
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortPersoonsRegister" type="tns:SoortPersoonsRegister"/>
+            <xs:complexType name="SoftwareVersie">
+                <xs:sequence>
+                    <xs:element name="Leverancier" type="tns:String80"/>
+                    <xs:element minOccurs="0" name="Pakketnaam" nillable="true" type="tns:String50"/>
+                    <xs:element minOccurs="0" name="Versie" nillable="true" type="tns:String24"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+            <xs:complexType name="ObjectIdentificatieEnType">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:ObjectIdentificatie">
+                        <xs:sequence>
+                            <xs:element name="Type" type="tns:SoortObject"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectIdentificatieEnType" type="tns:ObjectIdentificatieEnType"/>
+            <xs:complexType name="ObjectIdentificatie">
+                <xs:sequence>
+                    <xs:element name="Identificatie" type="tns:IdentificatieCode"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ObjectIdentificatie" type="tns:ObjectIdentificatie"/>
+            <xs:simpleType name="SoortObject">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Taak">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Formuliersjabloon">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Formulier">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Bericht">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Document">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Persoon">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1003
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Zaak">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1004
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortObject" type="tns:SoortObject"/>
+            <xs:complexType name="Antwoord">
+                <xs:sequence>
+                    <xs:element name="OperatieContext" type="tns:AntwoordContext"/>
+                    <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Antwoord" type="tns:Antwoord"/>
+            <xs:complexType name="Verwerkingsresultaat">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="IncidentCode" nillable="true" type="tns:IdentificatieCode"/>
+                    <xs:element name="IndicatieCorrectVerwerkt" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="Meldingen" nillable="true" type="tns:ArrayOfMelding"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+            <xs:complexType name="ArrayOfMelding">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Melding" nillable="true" type="tns:Melding"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ArrayOfMelding" type="tns:ArrayOfMelding"/>
+            <xs:complexType name="Melding">
+                <xs:sequence>
+                    <xs:element name="Code" type="tns:MeldingCode"/>
+                    <xs:element name="Omschrijving" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Melding" type="tns:Melding"/>
+            <xs:simpleType name="MeldingCode">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Autorisatie">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Ongeldige waarde">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Technische fout">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Niet gevonden">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Waarde verouderd">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Proces">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Niet digitaal ondersteund">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="MeldingCode" type="tns:MeldingCode"/>
+            <xs:complexType name="ObjectMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="tns:IdentificatieCode"/>
+                            <xs:element name="Type" type="tns:SoortObject"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectMelding" type="tns:ObjectMelding"/>
+            <xs:complexType name="BerichtMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Onderdeel" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BerichtMelding" type="tns:BerichtMelding"/>
+            <xs:complexType name="TestMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="TestMelding" type="tns:TestMelding"/>
+            <xs:complexType name="ObjectReferentie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:ObjectIdentificatieEnType">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Kenmerken" nillable="true"
+                                        type="tns:ObjectReferentie.KenmerkCollectie"/>
+                            <xs:element minOccurs="0" name="MogelijkeModelVersies" nillable="true"
+                                        type="tns:ModelVersies"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectReferentie" type="tns:ObjectReferentie"/>
+            <xs:complexType name="ObjectReferentie.KenmerkCollectie">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Kenmerk">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Naam" type="xs:string"/>
+                                <xs:element name="Waarde" type="xs:string"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ObjectReferentie.KenmerkCollectie" type="tns:ObjectReferentie.KenmerkCollectie"/>
+            <xs:complexType name="ModelVersies">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="ModelVersie" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ModelVersies" type="tns:ModelVersies"/>
+            <xs:complexType name="Bijlage">
+                <xs:sequence>
+                    <xs:element name="ContentType" type="tns:SoortMimeType"/>
+                    <xs:element name="Inhoud" type="xs:base64Binary"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Bijlage" type="tns:Bijlage"/>
+            <xs:simpleType name="SoortMimeType">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="application/octet-stream">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+                                    2147483647
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="application/pdf"/>
+                    <xs:enumeration value="image/gif"/>
+                    <xs:enumeration value="image/jpeg"/>
+                    <xs:enumeration value="image/png"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortMimeType" type="tns:SoortMimeType"/>
+            <xs:complexType name="StandaardMaakAanAntwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Antwoord">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="tns:IdentificatieCode"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="StandaardMaakAanAntwoord" type="tns:StandaardMaakAanAntwoord"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String50">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String50" type="tns:String50"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="IdentificatieCode">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="IdentificatieCode" type="tns:IdentificatieCode"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String80">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="80"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String80" type="tns:String80"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String24">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="24"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String24" type="tns:String24"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/ToezichtS2S/Formulier/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Formulier/v2">
+            <xs:import namespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+            <xs:complexType name="ValidatieMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:BerichtMelding" xmlns:q1="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+                        <xs:sequence>
+                            <xs:element name="Gegeven" type="q1:IdentificatieCode"/>
+                            <xs:element minOccurs="0" name="Regelnummer" nillable="true" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ValidatieMelding" type="tns:ValidatieMelding"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String300">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="300"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String300" type="tns:String300"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String20k">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="20000"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String20k" type="tns:String20k"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2">
+            <xs:simpleType name="String200">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="200"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String200" type="tns:String200"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="BerichtService_Raadpleeg_InputMessage">
+        <wsdl:part name="parameters" element="tns:Raadpleeg"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_Raadpleeg_OutputMessage">
+        <wsdl:part name="parameters" element="tns:RaadpleegResponse"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_Raadpleeg_AntwoordFault_FaultMessage">
+        <wsdl:part name="detail" element="q19:Antwoord" xmlns:q19="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_HaalOp_InputMessage">
+        <wsdl:part name="parameters" element="tns:HaalOp"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_HaalOp_OutputMessage">
+        <wsdl:part name="parameters" element="tns:HaalOpResponse"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_HaalOp_AntwoordFault_FaultMessage">
+        <wsdl:part name="detail" element="q20:Antwoord" xmlns:q20="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_MaakAan_InputMessage">
+        <wsdl:part name="parameters" element="tns:MaakAan"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_MaakAan_OutputMessage">
+        <wsdl:part name="parameters" element="tns:MaakAanResponse"/>
+    </wsdl:message>
+    <wsdl:message name="BerichtService_MaakAan_AntwoordFault_FaultMessage">
+        <wsdl:part name="detail" element="q21:Antwoord" xmlns:q21="http://rechtspraak.nl/ToezichtS2S/Algemeen/v2"/>
+    </wsdl:message>
+    <wsdl:portType name="BerichtService">
+        <wsdl:operation name="Raadpleeg">
+            <wsdl:input wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/Raadpleeg"
+                        message="tns:BerichtService_Raadpleeg_InputMessage"/>
+            <wsdl:output wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/RaadpleegResponse"
+                         message="tns:BerichtService_Raadpleeg_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/RaadpleegAntwoordFault"
+                        name="AntwoordFault" message="tns:BerichtService_Raadpleeg_AntwoordFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="HaalOp">
+            <wsdl:input wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/HaalOp"
+                        message="tns:BerichtService_HaalOp_InputMessage"/>
+            <wsdl:output wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/HaalOpResponse"
+                         message="tns:BerichtService_HaalOp_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/HaalOpAntwoordFault"
+                        name="AntwoordFault" message="tns:BerichtService_HaalOp_AntwoordFault_FaultMessage"/>
+        </wsdl:operation>
+        <wsdl:operation name="MaakAan">
+            <wsdl:input wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/MaakAan"
+                        message="tns:BerichtService_MaakAan_InputMessage"/>
+            <wsdl:output wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/MaakAanResponse"
+                         message="tns:BerichtService_MaakAan_OutputMessage"/>
+            <wsdl:fault wsaw:Action="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/MaakAanAntwoordFault"
+                        name="AntwoordFault" message="tns:BerichtService_MaakAan_AntwoordFault_FaultMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="soap12mtom_BerichtService" type="tns:BerichtService">
+        <wsp:PolicyReference URI="#soap12mtom_BerichtService_policy"/>
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="Raadpleeg">
+            <soap12:operation soapAction="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/Raadpleeg"
+                              style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AntwoordFault">
+                <soap12:fault use="literal" name="AntwoordFault" namespace=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="HaalOp">
+            <soap12:operation soapAction="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/HaalOp"
+                              style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AntwoordFault">
+                <soap12:fault use="literal" name="AntwoordFault" namespace=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="MaakAan">
+            <soap12:operation soapAction="http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/MaakAan"
+                              style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AntwoordFault">
+                <soap12:fault use="literal" name="AntwoordFault" namespace=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="BerichtService">
+        <wsdl:port name="soap12mtom_BerichtService" binding="tns:soap12mtom_BerichtService">
+            <soap12:address location="https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht"/>
+            <wsa10:EndpointReference>
+                <wsa10:Address>https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht</wsa10:Address>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

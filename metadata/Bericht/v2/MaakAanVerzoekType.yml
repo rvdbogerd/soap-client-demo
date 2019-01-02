@@ -1,0 +1,87 @@
+ToezichtS2S\Bericht\v2\MaakAanVerzoekType:
+    properties:
+        auteur:
+            expose: true
+            access_type: public_method
+            serialized_name: Auteur
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getAuteur
+                setter: setAuteur
+            type: string
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnType
+        bijlagen:
+            expose: true
+            access_type: public_method
+            serialized_name: Bijlagen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBijlagen
+                setter: setBijlagen
+            type: array<ToezichtS2S\Bericht\v2\BerichtBijlageType>
+            xml_list:
+                inline: false
+                entry_name: BerichtBijlage
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+        inAntwoordOp:
+            expose: true
+            access_type: public_method
+            serialized_name: InAntwoordOp
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getInAntwoordOp
+                setter: setInAntwoordOp
+            type: string
+        indicatieSpoed:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieSpoed
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getIndicatieSpoed
+                setter: setIndicatieSpoed
+            type: bool
+        indicatieVertrouwelijk:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieVertrouwelijk
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getIndicatieVertrouwelijk
+                setter: setIndicatieVertrouwelijk
+            type: bool
+        inhoud:
+            expose: true
+            access_type: public_method
+            serialized_name: Inhoud
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getInhoud
+                setter: setInhoud
+            type: string
+        onderwerp:
+            expose: true
+            access_type: public_method
+            serialized_name: Onderwerp
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getOnderwerp
+                setter: setOnderwerp
+            type: string

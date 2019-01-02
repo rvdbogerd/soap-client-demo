@@ -1,0 +1,16 @@
+ToezichtS2S\Bericht\v2\ArrayOfBerichtReferentieType:
+    properties:
+        berichtReferentie:
+            expose: true
+            access_type: public_method
+            serialized_name: BerichtReferentie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBerichtReferentie
+                setter: setBerichtReferentie
+            xml_list:
+                inline: true
+                entry_name: BerichtReferentie
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            type: array<ToezichtS2S\Bericht\v2\BerichtReferentieType>

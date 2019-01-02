@@ -1,0 +1,22 @@
+ToezichtS2S\Algemeen\v2\ObjectMeldingType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            type: string
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getType
+                setter: setType
+            type: string

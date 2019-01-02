@@ -1,0 +1,16 @@
+ToezichtS2S\Bericht\v2\ArrayOfBerichtBijlageType:
+    properties:
+        berichtBijlage:
+            expose: true
+            access_type: public_method
+            serialized_name: BerichtBijlage
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBerichtBijlage
+                setter: setBerichtBijlage
+            xml_list:
+                inline: true
+                entry_name: BerichtBijlage
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            type: array<ToezichtS2S\Bericht\v2\BerichtBijlageType>

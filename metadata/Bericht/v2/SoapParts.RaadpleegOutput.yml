@@ -1,0 +1,13 @@
+ToezichtS2S\Bericht\v2\SoapParts\RaadpleegOutput:
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            serialized_name: RaadpleegResponse
+            type: ToezichtS2S\Bericht\v2\RaadpleegResponse

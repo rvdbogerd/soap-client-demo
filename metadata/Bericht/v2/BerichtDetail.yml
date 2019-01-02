@@ -1,0 +1,3 @@
+ToezichtS2S\Bericht\v2\BerichtDetail:
+    xml_root_name: BerichtDetail
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'

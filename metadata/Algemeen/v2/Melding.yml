@@ -1,0 +1,3 @@
+ToezichtS2S\Algemeen\v2\Melding:
+    xml_root_name: Melding
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'

@@ -1,0 +1,32 @@
+ToezichtS2S\Bericht\v2\BerichtBijlageType:
+    properties:
+        beschrijving:
+            expose: true
+            access_type: public_method
+            serialized_name: Beschrijving
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBeschrijving
+                setter: setBeschrijving
+            type: string
+        bijlage:
+            expose: true
+            access_type: public_method
+            serialized_name: Bijlage
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getBijlage
+                setter: setBijlage
+            type: ToezichtS2S\Algemeen\v2\BijlageType
+        volgnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Volgnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2'
+            accessor:
+                getter: getVolgnummer
+                setter: setVolgnummer
+            type: int
