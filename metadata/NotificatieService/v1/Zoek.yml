@@ -11,4 +11,4 @@ ToezichtS2S\NotificatieService\v1\Zoek:
             accessor:
                 getter: getVerzoek
                 setter: setVerzoek
-            type: ToezichtS2S\Notificaties\v1\ZoekVerzoekType
+            type: ToezichtS2S\Service\Notificaties\v1\ZoekVerzoekType

@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Notificaties\v1\NotificatieWijzigingsInformatie:
+    xml_root_name: Notificatie.WijzigingsInformatie
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'

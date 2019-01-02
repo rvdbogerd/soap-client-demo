@@ -11,4 +11,4 @@ ToezichtS2S\NotificatieService\v1\ZoekResponse:
             accessor:
                 getter: getZoekResult
                 setter: setZoekResult
-            type: ToezichtS2S\Notificaties\v1\ZoekAntwoordType
+            type: ToezichtS2S\Service\Notificaties\v1\ZoekAntwoordType

@@ -9,14 +9,14 @@ class Zoek
 {
 
     /**
-     * @property \ToezichtS2S\Notificaties\v1\ZoekVerzoekType $verzoek
+     * @property \ToezichtS2S\Service\Notificaties\v1\ZoekVerzoekType $verzoek
      */
     private $verzoek = null;
 
     /**
      * Gets as verzoek
      *
-     * @return \ToezichtS2S\Notificaties\v1\ZoekVerzoekType
+     * @return \ToezichtS2S\Service\Notificaties\v1\ZoekVerzoekType
      */
     public function getVerzoek()
     {
@@ -26,10 +26,10 @@ class Zoek
     /**
      * Sets a new verzoek
      *
-     * @param \ToezichtS2S\Notificaties\v1\ZoekVerzoekType $verzoek
+     * @param \ToezichtS2S\Service\Notificaties\v1\ZoekVerzoekType $verzoek
      * @return self
      */
-    public function setVerzoek(\ToezichtS2S\Notificaties\v1\ZoekVerzoekType $verzoek = null)
+    public function setVerzoek(\ToezichtS2S\Service\Notificaties\v1\ZoekVerzoekType $verzoek = null)
     {
         $this->verzoek = $verzoek;
         return $this;

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="EindgebruikerService" targetNamespace="http://rechtspraak.nl/EindgebruikerService/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:tns="http://rechtspraak.nl/EindgebruikerService/v1"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+    <wsp:Policy wsu:Id="soap12mtom_EindgebruikerService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsoma:OptimizedMimeSerialization
+                        xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:X509Token
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:RequireThumbprintReference/>
+                                <sp:WssX509V3Token10/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                            <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                        </sp:SignedParts>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportRefThumbprint/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportIssuedTokens/>
+                        <sp:RequireClientEntropy/>
+                        <sp:RequireServerEntropy/>
+                    </wsp:Policy>
+                </sp:Trust10>
+                <wsaw:UsingAddressing/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+                   targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+            <xs:element name="anyType" type="xs:anyType"/>
+            <xs:element name="anyURI" type="xs:anyURI"/>
+            <xs:element name="base64Binary" type="xs:base64Binary"/>
+            <xs:element name="boolean" type="xs:boolean"/>
+            <xs:element name="byte" type="xs:byte"/>
+            <xs:element name="dateTime" type="xs:dateTime"/>
+            <xs:element name="decimal" type="xs:decimal"/>
+            <xs:element name="double" type="xs:double"/>
+            <xs:element name="float" type="xs:float"/>
+            <xs:element name="int" type="xs:int"/>
+            <xs:element name="long" type="xs:long"/>
+            <xs:element name="QName" type="xs:QName"/>
+            <xs:element name="short" type="xs:short"/>
+            <xs:element name="string" type="xs:string"/>
+            <xs:element name="unsignedByte" type="xs:unsignedByte"/>
+            <xs:element name="unsignedInt" type="xs:unsignedInt"/>
+            <xs:element name="unsignedLong" type="xs:unsignedLong"/>
+            <xs:element name="unsignedShort" type="xs:unsignedShort"/>
+            <xs:element name="char" type="tns:char"/>
+            <xs:simpleType name="char">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:element name="duration" type="tns:duration"/>
+            <xs:simpleType name="duration">
+                <xs:restriction base="xs:duration">
+                    <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+                    <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+                    <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="guid" type="tns:guid"/>
+            <xs:simpleType name="guid">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:attribute name="FactoryType" type="xs:QName"/>
+            <xs:attribute name="Id" type="xs:ID"/>
+            <xs:attribute name="Ref" type="xs:IDREF"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/Model/Algemeen/v1"/>
+            <xs:complexType name="Antwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:ExtensibleDataObject" xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="OperatieContext" type="tns:AntwoordContext"/>
+                            <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Antwoord" type="tns:Antwoord"/>
+            <xs:complexType name="AntwoordContext">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q2:ExtensibleDataObject" xmlns:q2="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="ExterneReferentie" nillable="true" type="q2:String50"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="AntwoordContext" type="tns:AntwoordContext"/>
+            <xs:complexType name="Verwerkingsresultaat">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q3:ExtensibleDataObject" xmlns:q3="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="IncidentCode" nillable="true" type="q3:IdentificatieCode"/>
+                            <xs:element name="IndicatieCorrectVerwerkt" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="Meldingen" nillable="true" type="tns:Meldingen"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+            <xs:complexType name="Meldingen">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Melding" nillable="true" type="tns:Melding"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Meldingen" type="tns:Meldingen"/>
+            <xs:complexType name="Melding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q4:ExtensibleDataObject" xmlns:q4="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Code" type="tns:MeldingCode"/>
+                            <xs:element name="Omschrijving" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Melding" type="tns:Melding"/>
+            <xs:complexType name="VerzoekContext">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:AntwoordContext">
+                        <xs:sequence>
+                            <xs:element name="Organisatie" type="q5:IdentificatieCode"
+                                        xmlns:q5="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="Register" type="tns:SoortPersoonsRegister"/>
+                            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="VerzoekContext" type="tns:VerzoekContext"/>
+            <xs:complexType name="SoftwareVersie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q6:ExtensibleDataObject" xmlns:q6="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Leverancier" type="q6:String80"/>
+                            <xs:element minOccurs="0" name="Pakketnaam" nillable="true" type="q6:String50"/>
+                            <xs:element minOccurs="0" name="Versie" nillable="true" type="q6:String24"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+            <xs:complexType name="BerichtMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Onderdeel" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BerichtMelding" type="tns:BerichtMelding"/>
+            <xs:complexType name="ObjectMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="q7:IdentificatieCode"
+                                        xmlns:q7="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="Type" type="q8:SoortObject"
+                                        xmlns:q8="http://rechtspraak.nl/Model/Algemeen/v1"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectMelding" type="tns:ObjectMelding"/>
+            <xs:complexType name="TestMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="TestMelding" type="tns:TestMelding"/>
+            <xs:complexType name="Verzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q9:ExtensibleDataObject" xmlns:q9="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="OperatieContext" type="tns:VerzoekContext"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Verzoek" type="tns:Verzoek"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/DataTypes"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:complexType name="ExtensibleDataObject">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:element name="ExtensibleDataObject" type="tns:ExtensibleDataObject"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String50">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String50" type="tns:String50"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="IdentificatieCode">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="IdentificatieCode" type="tns:IdentificatieCode"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:simpleType name="MeldingCode">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="MeldingCode" type="tns:MeldingCode"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:simpleType name="SoortPersoonsRegister">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortPersoonsRegister" type="tns:SoortPersoonsRegister"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String80">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="80"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String80" type="tns:String80"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String24">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="24"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String24" type="tns:String24"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Model/Algemeen/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Model/Algemeen/v1">
+            <xs:simpleType name="SoortObject">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortObject" type="tns:SoortObject"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Eindgebruikers/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/Eindgebruikers/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:complexType name="ValideerCertificaatAntwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:Antwoord" xmlns:q1="http://rechtspraak.nl/Service/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="IndicatieProductieOmgeving" type="xs:boolean"/>
+                            <xs:element name="IndicatieTestOmgeving" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="Meldingen" nillable="true" type="q1:Meldingen"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ValideerCertificaatAntwoord" type="tns:ValideerCertificaatAntwoord"/>
+            <xs:complexType name="ValideerCertificaatVerzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q2:Verzoek" xmlns:q2="http://rechtspraak.nl/Service/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="Certificaat" type="xs:base64Binary"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ValideerCertificaatVerzoek" type="tns:ValideerCertificaatVerzoek"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/EindgebruikerService/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://rechtspraak.nl/Service/Eindgebruikers/v1"/>
+            <xs:element name="ValideerCertificaat">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="verzoek" nillable="true" type="q1:ValideerCertificaatVerzoek"
+                                    xmlns:q1="http://rechtspraak.nl/Service/Eindgebruikers/v1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ValideerCertificaatResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ValideerCertificaatResult" nillable="true"
+                                    type="q2:ValideerCertificaatAntwoord"
+                                    xmlns:q2="http://rechtspraak.nl/Service/Eindgebruikers/v1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="EindgebruikerService_ValideerCertificaat_InputMessage">
+        <wsdl:part name="parameters" element="tns:ValideerCertificaat"/>
+    </wsdl:message>
+    <wsdl:message name="EindgebruikerService_ValideerCertificaat_OutputMessage">
+        <wsdl:part name="parameters" element="tns:ValideerCertificaatResponse"/>
+    </wsdl:message>
+    <wsdl:message name="EindgebruikerService_ValideerCertificaat_AntwoordFault_FaultMessage">
+        <wsdl:part name="detail" element="q21:Antwoord" xmlns:q21="http://rechtspraak.nl/Service/Algemeen/v1"/>
+    </wsdl:message>
+    <wsdl:portType name="EindgebruikerService">
+        <wsdl:operation name="ValideerCertificaat">
+            <wsdl:input wsaw:Action="http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1"
+                        message="tns:EindgebruikerService_ValideerCertificaat_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://rechtspraak.nl/EindgebruikerService/v1/EindgebruikerService/ValideerCertificaatResponse"
+                    message="tns:EindgebruikerService_ValideerCertificaat_OutputMessage"/>
+            <wsdl:fault
+                    wsaw:Action="http://rechtspraak.nl/EindgebruikerService/v1/EindgebruikerService/ValideerCertificaatAntwoordFault"
+                    name="AntwoordFault"
+                    message="tns:EindgebruikerService_ValideerCertificaat_AntwoordFault_FaultMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="soap12mtom_EindgebruikerService" type="tns:EindgebruikerService">
+        <wsp:PolicyReference URI="#soap12mtom_EindgebruikerService_policy"/>
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ValideerCertificaat">
+            <soap12:operation soapAction="http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1"
+                              style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AntwoordFault">
+                <soap12:fault use="literal" name="AntwoordFault" namespace=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="EindgebruikerService">
+        <wsdl:port name="soap12mtom_EindgebruikerService" binding="tns:soap12mtom_EindgebruikerService">
+            <soap12:address location="https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker"/>
+            <wsa10:EndpointReference>
+                <wsa10:Address>https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker
+                </wsa10:Address>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

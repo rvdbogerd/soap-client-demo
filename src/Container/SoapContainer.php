@@ -269,6 +269,256 @@ class SoapContainer extends Container
                             'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht',
                         ),
                     ),
+                    'EindgebruikerService' => array(
+                        'soap12mtom_EindgebruikerService' => array(
+                            'operations' => array(
+                                'ValideerCertificaat' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'ValideerCertificaat',
+                                    'method' => 'valideerCertificaat',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatInput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatInput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaat',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaatResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker',
+                        ),
+                    ),
+                    'MetadataService' => array(
+                        'soap12mtom_MetadataService' => array(
+                            'operations' => array(
+                                'RaadpleegCodelijst' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/MetadataService/RaadpleegCodelijst/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'RaadpleegCodelijst',
+                                    'method' => 'raadpleegCodelijst',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstInput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstInput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijst',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstOutput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                                'RaadpleegCodelijstRelatie' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/MetadataService/RaadpleegCodelijstRelatie/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'RaadpleegCodelijstRelatie',
+                                    'method' => 'raadpleegCodelijstRelatie',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstRelatieInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstRelatieInput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstRelatieInput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstRelatie',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstRelatieOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstRelatieOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstRelatieOutput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstRelatieResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata',
+                        ),
+                    ),
+                    'NotificatieService' => array(
+                        'soap12mtom_NotificatieService' => array(
+                            'operations' => array(
+                                'Zoek' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/NotificatieService/Zoek/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'Zoek',
+                                    'method' => 'zoek',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekInput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekInput',
+                                        'parts' => array(
+                                            'parameters' => 'Zoek',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ZoekResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/notificatie',
+                        ),
+                    ),
+                ),
+                './config/wsdl/eindgebruiker.v1.xml' => array(
+                    'BerichtService' => array(
+                        'soap12mtom_BerichtService' => array(
+                            'operations' => array(
+                                'Raadpleeg' => array(
+                                    'action' => 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/Raadpleeg',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'Raadpleeg',
+                                    'method' => 'raadpleeg',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\RaadpleegInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\RaadpleegInput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\RaadpleegInput',
+                                        'parts' => array(
+                                            'parameters' => 'Raadpleeg',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\RaadpleegOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\RaadpleegOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\RaadpleegOutput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                                'HaalOp' => array(
+                                    'action' => 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/HaalOp',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'HaalOp',
+                                    'method' => 'haalOp',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\HaalOpInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\HaalOpInput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\HaalOpInput',
+                                        'parts' => array(
+                                            'parameters' => 'HaalOp',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\HaalOpOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\HaalOpOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\HaalOpOutput',
+                                        'parts' => array(
+                                            'parameters' => 'HaalOpResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                                'MaakAan' => array(
+                                    'action' => 'http://rechtspraak.nl/ToezichtS2S/Bericht/v2/BerichtService/MaakAan',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'MaakAan',
+                                    'method' => 'maakAan',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\MaakAanInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\MaakAanInput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\MaakAanInput',
+                                        'parts' => array(
+                                            'parameters' => 'MaakAan',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Messages\\MaakAanOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapEnvelope12\\Headers\\MaakAanOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\Bericht\\v2\\SoapParts\\MaakAanOutput',
+                                        'parts' => array(
+                                            'parameters' => 'MaakAanResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht',
+                        ),
+                    ),
+                    'EindgebruikerService' => array(
+                        'soap12mtom_EindgebruikerService' => array(
+                            'operations' => array(
+                                'ValideerCertificaat' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'ValideerCertificaat',
+                                    'method' => 'valideerCertificaat',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatInput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatInput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaat',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaatResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker',
+                        ),
+                    ),
                     'MetadataService' => array(
                         'soap12mtom_MetadataService' => array(
                             'operations' => array(
@@ -449,6 +699,40 @@ class SoapContainer extends Container
                             ),
                             'unwrap' => false,
                             'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht',
+                        ),
+                    ),
+                    'EindgebruikerService' => array(
+                        'soap12mtom_EindgebruikerService' => array(
+                            'operations' => array(
+                                'ValideerCertificaat' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'ValideerCertificaat',
+                                    'method' => 'valideerCertificaat',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatInput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatInput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaat',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaatResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker',
                         ),
                     ),
                     'MetadataService' => array(
@@ -633,6 +917,40 @@ class SoapContainer extends Container
                             'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v2/soap12mtom/bericht',
                         ),
                     ),
+                    'EindgebruikerService' => array(
+                        'soap12mtom_EindgebruikerService' => array(
+                            'operations' => array(
+                                'ValideerCertificaat' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/EindgebruikerService/Raadpleeg/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'ValideerCertificaat',
+                                    'method' => 'valideerCertificaat',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatInput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatInput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaat',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Messages\\ValideerCertificaatOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapEnvelope12\\Headers\\ValideerCertificaatOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\EindgebruikerService\\v1\\SoapParts\\ValideerCertificaatOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ValideerCertificaatResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/eindgebruiker',
+                        ),
+                    ),
                     'MetadataService' => array(
                         'soap12mtom_MetadataService' => array(
                             'operations' => array(
@@ -739,7 +1057,9 @@ class SoapContainer extends Container
                     'http://rechtspraak.nl/Service/Metadata' => 'ToezichtS2S\\Service\\Metadata\\Generic',
                     'http://rechtspraak.nl/MetadataService/v1' => 'ToezichtS2S\\MetadataService\\v1',
                     'http://rechtspraak.nl/NotificatieService/v1' => 'ToezichtS2S\\NotificatieService\\v1',
-                    'http://rechtspraak.nl/Service/Notificaties/v1' => 'ToezichtS2S\\Notificaties\\v1',
+                    'http://rechtspraak.nl/Service/Notificaties/v1' => 'ToezichtS2S\\Service\\Notificaties\\v1',
+                    'http://rechtspraak.nl/EindgebruikerService/v1' => 'ToezichtS2S\\EindgebruikerService\\v1',
+                    'http://rechtspraak.nl/Service/Eindgebruikers/v1' => 'ToezichtS2S\\Service\\Eindgebruikers\\v1',
                     'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2' => 'ToezichtS2S\\Algemeen\\v2',
                     'http://rechtspraak.nl/ToezichtS2S/Bericht/v2' => 'ToezichtS2S\\Bericht\\v2',
                     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2' => 'ToezichtS2S\\Formulier\\v2',
@@ -753,7 +1073,9 @@ class SoapContainer extends Container
                     'ToezichtS2S\\Service\\Metadata\\v1' => 'src/ToezichtS2S/Service/Metadata/v1',
                     'ToezichtS2S\\MetadataService\\v1' => 'src/ToezichtS2S/MetadataService/v1',
                     'ToezichtS2S\\NotificatieService\\v1' => 'src/ToezichtS2S/NotificatieService/v1',
-                    'ToezichtS2S\\Notificaties\\v1' => 'src/ToezichtS2S/Notificaties/v1',
+                    'ToezichtS2S\\Service\\Notificaties\\v1' => 'src/ToezichtS2S/Service/Notificaties/v1',
+                    'ToezichtS2S\\EindgebruikerService\\v1' => 'src/ToezichtS2S/EindgebruikerService/v1',
+                    'ToezichtS2S\\Service\\Eindgebruikers\\v1' => 'src/ToezichtS2S/Service/Eindgebruikers/v1',
                     'ToezichtS2S\\Algemeen\\v2' => 'src/ToezichtS2S/Algemeen/v2',
                     'ToezichtS2S\\Bericht\\v2' => 'src/ToezichtS2S/Bericht/v2',
                     'ToezichtS2S\\Formulier\\v2' => 'src/ToezichtS2S/Formulier/v2',
@@ -767,13 +1089,16 @@ class SoapContainer extends Container
                     'ToezichtS2S\\Service\\Metadata\\Generic' => 'metadata/Service/Metadata/Generic',
                     'ToezichtS2S\\MetadataService\\v1' => 'metadata/MetadataService/v1',
                     'ToezichtS2S\\NotificatieService\\v1' => 'metadata/NotificatieService/v1',
-                    'ToezichtS2S\\Notificaties\\v1' => 'metadata/Notificaties/v1',
+                    'ToezichtS2S\\Service\\Notificaties\\v1' => 'metadata/Service/Notificaties/v1',
+                    'ToezichtS2S\\EindgebruikerService\\v1' => 'metadata/EindgebruikerService/v1',
+                    'ToezichtS2S\\Service\\Eindgebruikers\\v1' => 'metadata/Service/Eindgebruikers/v1',
                     'ToezichtS2S\\Algemeen\\v2' => 'metadata/Algemeen/v2',
                     'ToezichtS2S\\Bericht\\v2' => 'metadata/Bericht/v2',
                     'ToezichtS2S\\Formulier\\v2' => 'metadata/Formulier/v2',
                 ),
                 'metadata' => array(
                     './config/wsdl/bericht.v2.xml' => NULL,
+                    './config/wsdl/eindgebruiker.v1.xml' => NULL,
                     './config/wsdl/metadata.v1.xml' => NULL,
                     './config/wsdl/notificatie.v1.xml' => NULL,
                 ),

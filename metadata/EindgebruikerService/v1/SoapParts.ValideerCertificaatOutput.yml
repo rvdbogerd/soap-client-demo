@@ -1,0 +1,13 @@
+ToezichtS2S\EindgebruikerService\v1\SoapParts\ValideerCertificaatOutput:
+    xml_root_namespace: 'http://rechtspraak.nl/EindgebruikerService/v1'
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/EindgebruikerService/v1'
+            serialized_name: ValideerCertificaatResponse
+            type: ToezichtS2S\EindgebruikerService\v1\ValideerCertificaatResponse

@@ -1,0 +1,12 @@
+ToezichtS2S\Service\Eindgebruikers\v1\ValideerCertificaatVerzoekType:
+    properties:
+        certificaat:
+            expose: true
+            access_type: public_method
+            serialized_name: Certificaat
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Eindgebruikers/v1'
+            accessor:
+                getter: getCertificaat
+                setter: setCertificaat
+            type: \AnySimpleType

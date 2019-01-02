@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Eindgebruikers\v1\ValideerCertificaatVerzoek:
+    xml_root_name: ValideerCertificaatVerzoek
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Eindgebruikers/v1'
