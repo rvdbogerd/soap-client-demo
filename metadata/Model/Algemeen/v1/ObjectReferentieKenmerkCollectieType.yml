@@ -1,0 +1,16 @@
+ToezichtS2S\Model\Algemeen\v1\ObjectReferentieKenmerkCollectieType:
+    properties:
+        kenmerk:
+            expose: true
+            access_type: public_method
+            serialized_name: Kenmerk
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getKenmerk
+                setter: setKenmerk
+            xml_list:
+                inline: true
+                entry_name: Kenmerk
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            type: array<ToezichtS2S\Model\Algemeen\v1\ObjectReferentieKenmerkCollectieType\KenmerkAType>

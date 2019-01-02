@@ -1,0 +1,14 @@
+ToezichtS2S\NotificatieService\v1\ZoekResponse:
+    xml_root_name: ZoekResponse
+    xml_root_namespace: 'http://rechtspraak.nl/NotificatieService/v1'
+    properties:
+        zoekResult:
+            expose: true
+            access_type: public_method
+            serialized_name: ZoekResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/NotificatieService/v1'
+            accessor:
+                getter: getZoekResult
+                setter: setZoekResult
+            type: ToezichtS2S\Notificaties\v1\ZoekAntwoordType

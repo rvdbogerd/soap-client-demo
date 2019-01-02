@@ -1,0 +1,32 @@
+ToezichtS2S\Service\Algemeen\v1\PagineerVerzoekType:
+    properties:
+        aantalRijen:
+            expose: true
+            access_type: public_method
+            serialized_name: AantalRijen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getAantalRijen
+                setter: setAantalRijen
+            type: int
+        cookie:
+            expose: true
+            access_type: public_method
+            serialized_name: Cookie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getCookie
+                setter: setCookie
+            type: string
+        startRij:
+            expose: true
+            access_type: public_method
+            serialized_name: StartRij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getStartRij
+                setter: setStartRij
+            type: int

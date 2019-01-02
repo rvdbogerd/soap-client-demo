@@ -1,0 +1,16 @@
+ToezichtS2S\Notificaties\v1\NotificatieWijzigingsInformatieType:
+    properties:
+        parameter:
+            expose: true
+            access_type: public_method
+            serialized_name: Parameter
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'
+            accessor:
+                getter: getParameter
+                setter: setParameter
+            xml_list:
+                inline: true
+                entry_name: Parameter
+                namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'
+            type: array<ToezichtS2S\Notificaties\v1\NotificatieWijzigingsInformatieType\ParameterAType>

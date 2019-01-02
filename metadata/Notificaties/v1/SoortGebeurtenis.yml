@@ -1,0 +1,12 @@
+ToezichtS2S\Notificaties\v1\SoortGebeurtenis:
+    xml_root_name: 'ns-bb8c6eb0:SoortGebeurtenis'
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string

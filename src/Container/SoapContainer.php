@@ -182,7 +182,7 @@ class SoapContainer extends Container
     {
         return array(
             'goetas_webservices.soap_client.metadata' => array(
-                './config/wsdl/metadata.xml' => array(
+                './config/wsdl/metadata.v1.xml' => array(
                     'MetadataService' => array(
                         'soap12mtom_MetadataService' => array(
                             'operations' => array(
@@ -243,6 +243,136 @@ class SoapContainer extends Container
                             'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata',
                         ),
                     ),
+                    'NotificatieService' => array(
+                        'soap12mtom_NotificatieService' => array(
+                            'operations' => array(
+                                'Zoek' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/NotificatieService/Zoek/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'Zoek',
+                                    'method' => 'zoek',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekInput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekInput',
+                                        'parts' => array(
+                                            'parameters' => 'Zoek',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ZoekResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/notificatie',
+                        ),
+                    ),
+                ),
+                './config/wsdl/notificatie.v1.xml' => array(
+                    'MetadataService' => array(
+                        'soap12mtom_MetadataService' => array(
+                            'operations' => array(
+                                'RaadpleegCodelijst' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/MetadataService/RaadpleegCodelijst/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'RaadpleegCodelijst',
+                                    'method' => 'raadpleegCodelijst',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstInput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstInput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijst',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstOutput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                                'RaadpleegCodelijstRelatie' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/MetadataService/RaadpleegCodelijstRelatie/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'RaadpleegCodelijstRelatie',
+                                    'method' => 'raadpleegCodelijstRelatie',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstRelatieInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstRelatieInput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstRelatieInput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstRelatie',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Messages\\RaadpleegCodelijstRelatieOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapEnvelope12\\Headers\\RaadpleegCodelijstRelatieOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\MetadataService\\v1\\SoapParts\\RaadpleegCodelijstRelatieOutput',
+                                        'parts' => array(
+                                            'parameters' => 'RaadpleegCodelijstRelatieResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata',
+                        ),
+                    ),
+                    'NotificatieService' => array(
+                        'soap12mtom_NotificatieService' => array(
+                            'operations' => array(
+                                'Zoek' => array(
+                                    'action' => 'http://rechtspraak.nl/Service/NotificatieService/Zoek/v1',
+                                    'style' => 'document',
+                                    'version' => '1.2',
+                                    'name' => 'Zoek',
+                                    'method' => 'zoek',
+                                    'input' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekInput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekInput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekInput',
+                                        'parts' => array(
+                                            'parameters' => 'Zoek',
+                                        ),
+                                    ),
+                                    'output' => array(
+                                        'message_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Messages\\ZoekOutput',
+                                        'headers_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapEnvelope12\\Headers\\ZoekOutput',
+                                        'part_fqcn' => 'ToezichtS2S\\NotificatieService\\v1\\SoapParts\\ZoekOutput',
+                                        'parts' => array(
+                                            'parameters' => 'ZoekResponse',
+                                        ),
+                                    ),
+                                    'fault' => array(
+
+                                    ),
+                                ),
+                            ),
+                            'unwrap' => false,
+                            'endpoint' => 'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/notificatie',
+                        ),
+                    ),
                 ),
             ),
             'goetas_webservices.soap_client.config' => array(
@@ -254,6 +384,8 @@ class SoapContainer extends Container
                     'http://rechtspraak.nl/Service/Metadata/v1' => 'ToezichtS2S\\Service\\Metadata\\v1',
                     'http://rechtspraak.nl/Service/Metadata' => 'ToezichtS2S\\Service\\Metadata\\Generic',
                     'http://rechtspraak.nl/MetadataService/v1' => 'ToezichtS2S\\MetadataService\\v1',
+                    'http://rechtspraak.nl/NotificatieService/v1' => 'ToezichtS2S\\NotificatieService\\v1',
+                    'http://rechtspraak.nl/Service/Notificaties/v1' => 'ToezichtS2S\\Notificaties\\v1',
                 ),
                 'destinations_php' => array(
                     'ToezichtS2S\\Model\\Algemeen\\v1' => 'src/ToezichtS2S/Model/Algemeen/v1',
@@ -263,6 +395,8 @@ class SoapContainer extends Container
                     'ToezichtS2S\\Service\\Metadata\\Generic' => 'src/ToezichtS2S/Service/Metadata/Generic',
                     'ToezichtS2S\\Service\\Metadata\\v1' => 'src/ToezichtS2S/Service/Metadata/v1',
                     'ToezichtS2S\\MetadataService\\v1' => 'src/ToezichtS2S/MetadataService/v1',
+                    'ToezichtS2S\\NotificatieService\\v1' => 'src/ToezichtS2S/NotificatieService/v1',
+                    'ToezichtS2S\\Notificaties\\v1' => 'src/ToezichtS2S/Notificaties/v1',
                 ),
                 'destinations_jms' => array(
                     'ToezichtS2S\\Serialization' => 'metadata/Serialization',
@@ -272,9 +406,12 @@ class SoapContainer extends Container
                     'ToezichtS2S\\Service\\Metadata\\v1' => 'metadata/Service/Metadata/v1',
                     'ToezichtS2S\\Service\\Metadata\\Generic' => 'metadata/Service/Metadata/Generic',
                     'ToezichtS2S\\MetadataService\\v1' => 'metadata/MetadataService/v1',
+                    'ToezichtS2S\\NotificatieService\\v1' => 'metadata/NotificatieService/v1',
+                    'ToezichtS2S\\Notificaties\\v1' => 'metadata/Notificaties/v1',
                 ),
                 'metadata' => array(
-                    './config/wsdl/metadata.xml' => NULL,
+                    './config/wsdl/metadata.v1.xml' => NULL,
+                    './config/wsdl/notificatie.v1.xml' => NULL,
                 ),
                 'alternative_endpoints' => array(
 

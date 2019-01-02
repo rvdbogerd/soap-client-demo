@@ -10,6 +10,8 @@ soap_client:
     'http://rechtspraak.nl/Service/Metadata/v1':              'ToezichtS2S\Service\Metadata\v1'
     'http://rechtspraak.nl/Service/Metadata':                 'ToezichtS2S\Service\Metadata\Generic'
     'http://rechtspraak.nl/MetadataService/v1':               'ToezichtS2S\MetadataService\v1'
+    'http://rechtspraak.nl/NotificatieService/v1':            'ToezichtS2S\NotificatieService\v1'
+    'http://rechtspraak.nl/Service/Notificaties/v1':                  'ToezichtS2S\Notificaties\v1'
 
   destinations_php:
     'ToezichtS2S\Model\Algemeen\v1':    src/ToezichtS2S/Model/Algemeen/v1
@@ -19,6 +21,8 @@ soap_client:
     'ToezichtS2S\Service\Metadata\Generic':     src/ToezichtS2S/Service/Metadata/Generic
     'ToezichtS2S\Service\Metadata\v1':  src/ToezichtS2S/Service/Metadata/v1
     'ToezichtS2S\MetadataService\v1':   src/ToezichtS2S/MetadataService/v1
+    'ToezichtS2S\NotificatieService\v1':   src/ToezichtS2S/NotificatieService/v1
+    'ToezichtS2S\Notificaties\v1':      src/ToezichtS2S/Notificaties/v1
 
   destinations_jms:
     'ToezichtS2S\Serialization':        metadata/Serialization
@@ -28,7 +32,10 @@ soap_client:
     'ToezichtS2S\Service\Metadata\v1':  metadata/Service/Metadata/v1
     'ToezichtS2S\Service\Metadata\Generic':     metadata/Service/Metadata/Generic
     'ToezichtS2S\MetadataService\v1':   metadata/MetadataService/v1
+    'ToezichtS2S\NotificatieService\v1':   metadata/NotificatieService/v1
+    'ToezichtS2S\Notificaties\v1':   metadata/Notificaties/v1
 
   metadata:
 #    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?singleWsdl': ~
-    './config/wsdl/metadata.xml': ~
+    './config/wsdl/metadata.v1.xml': ~
+    './config/wsdl/notificatie.v1.xml': ~

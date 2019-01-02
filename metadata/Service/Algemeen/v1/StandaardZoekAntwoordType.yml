@@ -1,0 +1,12 @@
+ToezichtS2S\Service\Algemeen\v1\StandaardZoekAntwoordType:
+    properties:
+        paginering:
+            expose: true
+            access_type: public_method
+            serialized_name: Paginering
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getPaginering
+                setter: setPaginering
+            type: ToezichtS2S\Service\Algemeen\v1\PagineerAntwoordType

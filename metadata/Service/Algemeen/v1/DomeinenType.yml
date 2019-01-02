@@ -1,0 +1,16 @@
+ToezichtS2S\Service\Algemeen\v1\DomeinenType:
+    properties:
+        domein:
+            expose: true
+            access_type: public_method
+            serialized_name: Domein
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getDomein
+                setter: setDomein
+            xml_list:
+                inline: true
+                entry_name: Domein
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            type: array<string>

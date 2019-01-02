@@ -1,0 +1,50 @@
+ToezichtS2S\Model\Algemeen\v1\ObjectReferentieType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            type: string
+        kenmerken:
+            expose: true
+            access_type: public_method
+            serialized_name: Kenmerken
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getKenmerken
+                setter: setKenmerken
+            type: array<ToezichtS2S\Model\Algemeen\v1\ObjectReferentieKenmerkCollectieType\KenmerkAType>
+            xml_list:
+                inline: false
+                entry_name: Kenmerk
+                skip_when_empty: true
+        modelVersies:
+            expose: true
+            access_type: public_method
+            serialized_name: ModelVersies
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getModelVersies
+                setter: setModelVersies
+            type: array<int>
+            xml_list:
+                inline: false
+                entry_name: ModelVersie
+                skip_when_empty: false
+        type:
+            expose: true
+            access_type: public_method
+            serialized_name: Type
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getType
+                setter: setType
+            type: string

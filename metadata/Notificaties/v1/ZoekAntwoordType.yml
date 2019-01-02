@@ -1,0 +1,17 @@
+ToezichtS2S\Notificaties\v1\ZoekAntwoordType:
+    properties:
+        notificaties:
+            expose: true
+            access_type: public_method
+            serialized_name: Notificaties
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'
+            accessor:
+                getter: getNotificaties
+                setter: setNotificaties
+            type: array<ToezichtS2S\Notificaties\v1\NotificatieType>
+            xml_list:
+                inline: false
+                entry_name: Notificatie
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/Service/Notificaties/v1'
