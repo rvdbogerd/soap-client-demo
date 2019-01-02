@@ -3,37 +3,32 @@ soap_client:
   #    service:
   #      port: http://localhost:8080
   namespaces:
-    'http://schemas.microsoft.com/2003/10/Serialization/':    'Serialization'
-    'http://rechtspraak.nl/Service/Algemeen/v1':              'Service_Algemeen_v1'
-    'http://rechtspraak.nl/Model/Algemeen/v1':                'Model_Algemeen_v1'
-    'http://rechtspraak.nl/Service/DataTypes':                'Service_DataTypes'
-    'http://rechtspraak.nl/Service/Metadata/v1':              'Service_Metadata_v1'
-    'http://rechtspraak.nl/Service/Metadata':                 'Service_Metadata'
-    'http://rechtspraak.nl/MetadataService/v1':               'MetadataService_v1'
+    'http://schemas.microsoft.com/2003/10/Serialization/':    'ToezichtS2S\Serialization'
+    'http://rechtspraak.nl/Service/Algemeen/v1':              'ToezichtS2S\Service\Algemeen\v1'
+    'http://rechtspraak.nl/Model/Algemeen/v1':                'ToezichtS2S\Model\Algemeen\v1'
+    'http://rechtspraak.nl/Service/DataTypes':                'ToezichtS2S\Service\DataTypes'
+    'http://rechtspraak.nl/Service/Metadata/v1':              'ToezichtS2S\Service\Metadata\v1'
+    'http://rechtspraak.nl/Service/Metadata':                 'ToezichtS2S\Service\Metadata\Generic'
+    'http://rechtspraak.nl/MetadataService/v1':               'ToezichtS2S\MetadataService\v1'
 
   destinations_php:
-    'Model_Algemeen_v1':    src/Generated/Model/Algemeen/v1
-    'Serialization':        src/Generated/Serialization
-    'Service_Algemeen_v1':  src/Generated/Service/Algemeen/v1
-    'Service_DataTypes':    src/Generated/Service/DataTypes
-    'Service_Metadata':     src/Generated/Service/Metadata
-    'Service_Metadata_v1':  src/Generated/Service/Metadata/v1
-    'MetadataService_v1':   src/Generated/MetadataService/v1
+    'ToezichtS2S\Model\Algemeen\v1':    src/ToezichtS2S/Model/Algemeen/v1
+    'ToezichtS2S\Serialization':        src/ToezichtS2S/Serialization
+    'ToezichtS2S\Service\Algemeen\v1':  src/ToezichtS2S/Service/Algemeen/v1
+    'ToezichtS2S\Service\DataTypes':    src/ToezichtS2S/Service/DataTypes
+    'ToezichtS2S\Service\Metadata\Generic':     src/ToezichtS2S/Service/Metadata/Generic
+    'ToezichtS2S\Service\Metadata\v1':  src/ToezichtS2S/Service/Metadata/v1
+    'ToezichtS2S\MetadataService\v1':   src/ToezichtS2S/MetadataService/v1
 
   destinations_jms:
-    'Serialization':        metadata/Serialization
-    'Service_Algemeen_v1':  metadata/Service/Algemeen_v1
-    'Model_Algemeen_v1':    metadata/Model/Algemeen_v1
-    'Service_DataTypes':    metadata/Service/DataTypes
-    'Service_Metadata_v1':  metadata/Service/Metadata_v1
-    'Service_Metadata':     metadata/Service/Metadata
-    'MetadataService_v1':   metadata/MetadataService_v1
+    'ToezichtS2S\Serialization':        metadata/Serialization
+    'ToezichtS2S\Service\Algemeen\v1':  metadata/Service/Algemeen/v1
+    'ToezichtS2S\Model\Algemeen\v1':    metadata/Model/Algemeen/v1
+    'ToezichtS2S\Service\DataTypes':    metadata/Service/DataTypes
+    'ToezichtS2S\Service\Metadata\v1':  metadata/Service/Metadata/v1
+    'ToezichtS2S\Service\Metadata\Generic':     metadata/Service/Metadata/Generic
+    'ToezichtS2S\MetadataService\v1':   metadata/MetadataService/v1
 
   metadata:
 #    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?singleWsdl': ~
-#    'http://www.dneonline.com/calculator.asmx?WSDL': ~
-#    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?singleWsdl': ~
-#    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?wsdl=wsdl0': ~
-    './config/metadata.final.xml': ~
-#    './config/metadata-snippet.xml': ~
-#    './config/metadata.xml': ~
+    './config/wsdl/metadata.xml': ~

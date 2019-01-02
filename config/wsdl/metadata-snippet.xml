@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="MetadataService" targetNamespace="http://rechtspraak.nl/MetadataService/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:tns="http://rechtspraak.nl/MetadataService/v1"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:q1="http://rechtspraak.nl/Service/DataTypes"
+>
+    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" attributeFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/DataTypes"
+                   xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+            <xs:complexType name="CodelijstWaarde">
+                <xs:sequence>
+                    <xs:element name="Titel" type="xs:string"/>
+                    <xs:element name="Waarde" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="CodelijstWaarde" type="q1:CodelijstWaarde"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" attributeFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/DataTypes"
+                   xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+            <!--<xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>-->
+            <xs:simpleType name="String50">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String50" type="q1:String50" xmlns:q1="http://rechtspraak.nl/Service/DataTypes"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" attributeFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Metadata" xmlns:tns="http://rechtspraak.nl/Service/Metadata"
+                   xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+            <!--<xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>-->
+            <xs:complexType name="CodelijstWaarden">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="CodelijstWaarde" nillable="true" type="q1:CodelijstWaarde"  />
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="CodelijstWaarden" type="tns:CodelijstWaarden"/>
+        </xs:schema>
+    </wsdl:types>
+</wsdl:definitions>

@@ -116,6 +116,9 @@
         </xs:schema>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/Model/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
             <xs:complexType name="Antwoord">
                 <xs:complexContent mixed="false">
                     <xs:extension base="q1:ExtensibleDataObject" xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
@@ -321,6 +324,8 @@
         </xs:schema>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Metadata/v1"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Metadata/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/Service/Metadata"/>
             <xs:complexType name="RaadpleegCodelijstAntwoord">
                 <xs:complexContent mixed="false">
                     <xs:extension base="q1:Antwoord" xmlns:q1="http://rechtspraak.nl/Service/Algemeen/v1">
@@ -369,6 +374,7 @@
         </xs:schema>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Metadata"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Metadata">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
             <xs:complexType name="CodelijstWaarden">
                 <xs:sequence>
                     <xs:element minOccurs="0" maxOccurs="unbounded" name="CodelijstWaarde" nillable="true"
@@ -386,12 +392,12 @@
         </xs:schema>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/MetadataService/v1"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <impo
+            <xs:import namespace="http://rechtspraak.nl/Service/Metadata/v1"/>
             <xs:element name="RaadpleegCodelijst">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="verzoek" nillable="true" xmlns:q1="http://rechtspraak.nl/Service/Metadata/v1" type="q1:RaadpleegCodelijstVerzoek"
-                                    />
+                        <xs:element minOccurs="0" name="verzoek" nillable="true" type="q1:RaadpleegCodelijstVerzoek"
+                                    xmlns:q1="http://rechtspraak.nl/Service/Metadata/v1"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>

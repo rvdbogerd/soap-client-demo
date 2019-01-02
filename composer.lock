@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b84124cf387d5fdc77ad1fb9d930b98",
+    "content-hash": "dea19af8127aa756b98a77a5c716643f",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1293,6 +1293,90 @@
             "time": "2016-02-11T07:05:27+00:00"
         },
         {
+            "name": "robrichards/wse-php",
+            "version": "dev-armarium-patches",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rvdbogerd/wse-php.git",
+                "reference": "71e1f19330df11004bdb92f217d7bff2d64ffb6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rvdbogerd/wse-php/zipball/71e1f19330df11004bdb92f217d7bff2d64ffb6b",
+                "reference": "71e1f19330df11004bdb92f217d7bff2d64ffb6b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 5.3",
+                "robrichards/xmlseclibs": ">=3.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\WsePhp\\": "src"
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Richards",
+                    "homepage": "http://www.cdatazone.org/",
+                    "role": "Main developer"
+                }
+            ],
+            "description": "Libraries for adding WS-* support to ext/soap in PHP.",
+            "homepage": "https://github.com/robrichards/wse-php",
+            "keywords": [
+                "SOAP",
+                "WS-Addressing",
+                "WS-Security"
+            ],
+            "support": {
+                "source": "https://github.com/rvdbogerd/wse-php/tree/armarium-patches"
+            },
+            "time": "2018-12-07T16:19:17+00:00"
+        },
+        {
+            "name": "robrichards/xmlseclibs",
+            "version": "3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robrichards/xmlseclibs.git",
+                "reference": "406c68ac9124db033d079284b719958b829cb830"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robrichards/xmlseclibs/zipball/406c68ac9124db033d079284b719958b829cb830",
+                "reference": "406c68ac9124db033d079284b719958b829cb830",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">= 5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RobRichards\\XMLSecLibs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "A PHP library for XML Security",
+            "homepage": "https://github.com/robrichards/xmlseclibs",
+            "keywords": [
+                "security",
+                "signature",
+                "xml",
+                "xmldsig"
+            ],
+            "time": "2018-11-15T11:59:02+00:00"
+        },
+        {
             "name": "symfony/dependency-injection",
             "version": "v3.4.20",
             "source": {
@@ -1956,12 +2040,12 @@
             "version": "v0.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/goetas-webservices/xsd2php.git",
+                "url": "https://github.com/rvdbogerd/xsd2php.git",
                 "reference": "496cef03264358057972b2be4bfe70bf718db5d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/goetas-webservices/xsd2php/zipball/496cef03264358057972b2be4bfe70bf718db5d5",
+                "url": "https://api.github.com/repos/rvdbogerd/xsd2php/zipball/496cef03264358057972b2be4bfe70bf718db5d5",
                 "reference": "496cef03264358057972b2be4bfe70bf718db5d5",
                 "shasum": ""
             },
@@ -2488,11 +2572,13 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "robrichards/wse-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.5|^7.0"
+        "php": "^7.1"
     },
     "platform-dev": []
 }
