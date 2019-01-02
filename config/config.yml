@@ -99,7 +99,7 @@ soap_client:
     'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          metadata/MijnRechtspraak/Model/Algemeen/v1
     'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v1
 
-    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    metadata/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v2
 
     'ToezichtS2S\Algemeen\v2':                                metadata/Algemeen/v2
     'ToezichtS2S\Bericht\v2':                                 metadata/Bericht/v2
@@ -111,7 +111,6 @@ soap_client:
 
   metadata:
 #    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?singleWsdl': ~
-#    './config/wsdl/bericht.v1.xml': ~
     './config/wsdl/bericht.v2.xml': ~
     './config/wsdl/eindgebruiker.v1.xml': ~
     './config/wsdl/formulier.v2.xml': ~

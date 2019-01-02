@@ -4962,7 +4962,7 @@ class SoapContainer extends Container
                     'ToezichtS2S\\MijnRechtspraak\\Model\\Zaken\\v1' => 'metadata/MijnRechtspraak/Model/Zaken/v1',
                     'ToezichtS2S\\MijnRechtspraak\\Model\\Algemeen\\v1' => 'metadata/MijnRechtspraak/Model/Algemeen/v1',
                     'ToezichtS2S\\MijnRechtspraak\\Toezicht\\Model\\Zaken\\v1' => 'metadata/MijnRechtspraak/Toezicht/Model/Zaken/v1',
-                    'ToezichtS2S\\MijnRechtspraak\\Toezicht\\Model\\Zaken\\v2' => 'metadata/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2',
+                    'ToezichtS2S\\MijnRechtspraak\\Toezicht\\Model\\Zaken\\v2' => 'metadata/MijnRechtspraak/Toezicht/Model/Zaken/v2',
                     'ToezichtS2S\\Algemeen\\v2' => 'metadata/Algemeen/v2',
                     'ToezichtS2S\\Bericht\\v2' => 'metadata/Bericht/v2',
                     'ToezichtS2S\\Formulier\\v2' => 'metadata/Formulier/v2',

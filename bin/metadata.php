@@ -38,7 +38,7 @@ $factory = new ClientFactory($metadata, $serializer);
 
 /** @var MetadataService $client */
 $client = $factory->getClient(
-    './config/wsdl/metadata.wip.xml',
+    './config/wsdl/metadata.v1.xml',
     "soap12mtom_MetadataService",
     "MetadataService"
 );
