@@ -1,0 +1,42 @@
+ToezichtS2S\MijnRechtspraak\Service\Zaken\v1\WijzigBetrokkenPersoonVerzoekType:
+    properties:
+        huidigBetrokkenPersoon:
+            expose: true
+            access_type: public_method
+            serialized_name: HuidigBetrokkenPersoon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1'
+            accessor:
+                getter: getHuidigBetrokkenPersoon
+                setter: setHuidigBetrokkenPersoon
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\PersoonType
+        nieuwBetrokkenPersoon:
+            expose: true
+            access_type: public_method
+            serialized_name: NieuwBetrokkenPersoon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1'
+            accessor:
+                getter: getNieuwBetrokkenPersoon
+                setter: setNieuwBetrokkenPersoon
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\PersoonType
+        rol:
+            expose: true
+            access_type: public_method
+            serialized_name: Rol
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1'
+            accessor:
+                getter: getRol
+                setter: setRol
+            type: string
+        zaakIdentificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: ZaakIdentificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1'
+            accessor:
+                getter: getZaakIdentificatie
+                setter: setZaakIdentificatie
+            type: string

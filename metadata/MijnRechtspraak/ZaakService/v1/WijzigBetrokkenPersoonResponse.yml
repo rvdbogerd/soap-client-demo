@@ -1,0 +1,14 @@
+ToezichtS2S\MijnRechtspraak\ZaakService\v1\WijzigBetrokkenPersoonResponse:
+    xml_root_name: WijzigBetrokkenPersoonResponse
+    xml_root_namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+    properties:
+        wijzigBetrokkenPersoonResult:
+            expose: true
+            access_type: public_method
+            serialized_name: WijzigBetrokkenPersoonResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+            accessor:
+                getter: getWijzigBetrokkenPersoonResult
+                setter: setWijzigBetrokkenPersoonResult
+            type: ToezichtS2S\Service\Algemeen\v1\AntwoordType

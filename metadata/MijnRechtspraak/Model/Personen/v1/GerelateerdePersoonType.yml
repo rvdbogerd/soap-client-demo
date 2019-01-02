@@ -1,0 +1,32 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\GerelateerdePersoonType:
+    properties:
+        isActueel:
+            expose: true
+            access_type: public_method
+            serialized_name: IsActueel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getIsActueel
+                setter: setIsActueel
+            type: bool
+        persoon:
+            expose: true
+            access_type: public_method
+            serialized_name: Persoon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getPersoon
+                setter: setPersoon
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\PersoonReferentieType
+        relatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Relatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRelatie
+                setter: setRelatie
+            type: string

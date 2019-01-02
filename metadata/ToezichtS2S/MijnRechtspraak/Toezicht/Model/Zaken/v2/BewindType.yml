@@ -1,0 +1,32 @@
+ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2\BewindType:
+    properties:
+        grond:
+            expose: true
+            access_type: public_method
+            serialized_name: Grond
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2'
+            accessor:
+                getter: getGrond
+                setter: setGrond
+            type: string
+        indicatieInStaatRVTeBeoordelen:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieInStaatRVTeBeoordelen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2'
+            accessor:
+                getter: getIndicatieInStaatRVTeBeoordelen
+                setter: setIndicatieInStaatRVTeBeoordelen
+            type: bool
+        indicatieRegister:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieRegister
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2'
+            accessor:
+                getter: getIndicatieRegister
+                setter: setIndicatieRegister
+            type: bool

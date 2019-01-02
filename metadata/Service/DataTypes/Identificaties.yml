@@ -1,0 +1,3 @@
+ToezichtS2S\Service\DataTypes\Identificaties:
+    xml_root_name: Identificaties
+    xml_root_namespace: 'http://rechtspraak.nl/Service/DataTypes'

@@ -1,0 +1,14 @@
+ToezichtS2S\MijnRechtspraak\ZaakService\v1\HaalOpResponse:
+    xml_root_name: HaalOpResponse
+    xml_root_namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+    properties:
+        haalOpResult:
+            expose: true
+            access_type: public_method
+            serialized_name: HaalOpResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+            accessor:
+                getter: getHaalOpResult
+                setter: setHaalOpResult
+            type: ToezichtS2S\MijnRechtspraak\Service\Zaken\v1\HaalOpAntwoordType

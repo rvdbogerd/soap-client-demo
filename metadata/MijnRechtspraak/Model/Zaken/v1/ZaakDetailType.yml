@@ -1,0 +1,77 @@
+ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakDetailType:
+    properties:
+        betrokkenPersonen:
+            expose: true
+            access_type: public_method
+            serialized_name: BetrokkenPersonen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getBetrokkenPersonen
+                setter: setBetrokkenPersonen
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\BetrokkenPersoonType>
+            xml_list:
+                inline: false
+                entry_name: BetrokkenPersoon
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+        datumAanvang:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumAanvang
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getDatumAanvang
+                setter: setDatumAanvang
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumEinde:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumEinde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getDatumEinde
+                setter: setDatumEinde
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        detailGegevens:
+            expose: true
+            access_type: public_method
+            serialized_name: DetailGegevens
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getDetailGegevens
+                setter: setDetailGegevens
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1\DetailGegevensGroepType>
+            xml_list:
+                inline: false
+                entry_name: Gegevensgroep
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1'
+        gerecht:
+            expose: true
+            access_type: public_method
+            serialized_name: Gerecht
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getGerecht
+                setter: setGerecht
+            type: ToezichtS2S\Model\Algemeen\v1\GerechtType
+        gerelateerdeZaken:
+            expose: true
+            access_type: public_method
+            serialized_name: GerelateerdeZaken
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getGerelateerdeZaken
+                setter: setGerelateerdeZaken
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakRelatieType>
+            xml_list:
+                inline: false
+                entry_name: GerelateerdeZaak
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'

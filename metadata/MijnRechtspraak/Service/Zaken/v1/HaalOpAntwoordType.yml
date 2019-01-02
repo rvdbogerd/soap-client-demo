@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Service\Zaken\v1\HaalOpAntwoordType:
+    properties:
+        zaak:
+            expose: true
+            access_type: public_method
+            serialized_name: Zaak
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1'
+            accessor:
+                getter: getZaak
+                setter: setZaak
+            type: ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakDetailType

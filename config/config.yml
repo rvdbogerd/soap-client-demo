@@ -16,13 +16,19 @@ soap_client:
     'http://rechtspraak.nl/Service/Notificaties/v1':              'ToezichtS2S\Service\Notificaties\v1'
     'http://rechtspraak.nl/EindgebruikerService/v1':              'ToezichtS2S\EindgebruikerService\v1'
     'http://rechtspraak.nl/Service/Eindgebruikers/v1':            'ToezichtS2S\Service\Eindgebruikers\v1'
+    'http://rechtspraak.nl/Service/Formulieren/v1':               'ToezichtS2S\Service\Formulieren\v1'
+    'http://rechtspraak.nl/MijnRechtspraak/Service/Documenten/v1': 'ToezichtS2S\MijnRechtspraak\Service\Documenten\v1'
+    'http://rechtspraak.nl/MijnRechtspraak/Service/Berichten/v1': 'ToezichtS2S\MijnRechtspraak\Service\Berichten\v1'
     'http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1':    'ToezichtS2S\MijnRechtspraak\PersoonService\v1'
     'http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1':  'ToezichtS2S\MijnRechtspraak\Service\Personen\v1'
     'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1':    'ToezichtS2S\MijnRechtspraak\Model\Personen\v1'
     'http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1':    'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1'
-#    'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1':       'ToezichtS2S\MijnRechtspraak\ZaakService\v1'
-#    'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1':     'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1'
+    'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1':       'ToezichtS2S\MijnRechtspraak\ZaakService\v1'
+    'http://rechtspraak.nl/MijnRechtspraak/Service/Zaken/v1':     'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1'
     'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1':       'ToezichtS2S\MijnRechtspraak\Model\Zaken\v1'
+    'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1': 'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1'
+
+    'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2': 'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2'
 
     # v2 services:
     'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2':              'ToezichtS2S\Algemeen\v2'
@@ -45,13 +51,19 @@ soap_client:
     'ToezichtS2S\Service\Notificaties\v1':                    src/ToezichtS2S/Service/Notificaties/v1
     'ToezichtS2S\EindgebruikerService\v1':                    src/ToezichtS2S/EindgebruikerService/v1
     'ToezichtS2S\Service\Eindgebruikers\v1':                  src/ToezichtS2S/Service/Eindgebruikers/v1
+    'ToezichtS2S\Service\Formulieren\v1':                     src/ToezichtS2S/Service/Formulieren/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Documenten\v1':      src/ToezichtS2S/MijnRechtspraak/Service/Documenten/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Berichten\v1':       src/ToezichtS2S/MijnRechtspraak/Service/Berichten/v1
     'ToezichtS2S\MijnRechtspraak\PersoonService\v1':          src/ToezichtS2S/MijnRechtspraak/PersoonService/v1
     'ToezichtS2S\MijnRechtspraak\Model\Personen\v1':          src/ToezichtS2S/MijnRechtspraak/Model/Personen/v1
     'ToezichtS2S\MijnRechtspraak\Service\Personen\v1':        src/ToezichtS2S/MijnRechtspraak/Service/Personen/v1
-#    'ToezichtS2S\MijnRechtspraak\ZaakService\v1':             src/ToezichtS2S/MijnRechtspraak/ZaakService/v1
-#    'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1':           src/ToezichtS2S/MijnRechtspraak/Service/Zaken/v1
+    'ToezichtS2S\MijnRechtspraak\ZaakService\v1':             src/ToezichtS2S/MijnRechtspraak/ZaakService/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1':           src/ToezichtS2S/MijnRechtspraak/Service/Zaken/v1
     'ToezichtS2S\MijnRechtspraak\Model\Zaken\v1':             src/ToezichtS2S/MijnRechtspraak/Model/Zaken/v1
     'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          src/ToezichtS2S/MijnRechtspraak/Model/Algemeen/v1
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1':    src/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v1
+
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    src/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2
 
     'ToezichtS2S\Algemeen\v2':                                src/ToezichtS2S/Algemeen/v2
     'ToezichtS2S\Bericht\v2':                                 src/ToezichtS2S/Bericht/v2
@@ -73,13 +85,19 @@ soap_client:
     'ToezichtS2S\Service\Notificaties\v1':                    metadata/Service/Notificaties/v1
     'ToezichtS2S\EindgebruikerService\v1':                    metadata/EindgebruikerService/v1
     'ToezichtS2S\Service\Eindgebruikers\v1':                  metadata/Service/Eindgebruikers/v1
-    'ToezichtS2S\MijnRechtspraak\PersoonService\v1':          metadata/ToezichtS2S/MijnRechtspraak/PersoonService/v1
-    'ToezichtS2S\MijnRechtspraak\Model\Personen\v1':          metadata/ToezichtS2S/MijnRechtspraak/Model/Personen/v1
-    'ToezichtS2S\MijnRechtspraak\Service\Personen\v1':        metadata/ToezichtS2S/MijnRechtspraak/Service/Personen/v1
-#    'ToezichtS2S\MijnRechtspraak\ZaakService\v1':            metadata/ToezichtS2S/MijnRechtspraak/ZaakService/v1
-#    'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1':          metadata/ToezichtS2S/MijnRechtspraak/Service/Zaken/v1
-    'ToezichtS2S\MijnRechtspraak\Model\Zaken\v1':             metadata/ToezichtS2S/MijnRechtspraak/Model/Zaken/v1
-    'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          metadata/ToezichtS2S/MijnRechtspraak/Model/Algemeen/v1
+    'ToezichtS2S\Service\Formulieren\v1':                     metadata/Service/Formulieren/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Documenten\v1':      metadata/MijnRechtspraak/Service/Documenten/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Berichten\v1':       metadata/MijnRechtspraak/Service/Berichten/v1
+    'ToezichtS2S\MijnRechtspraak\PersoonService\v1':          metadata/MijnRechtspraak/PersoonService/v1
+    'ToezichtS2S\MijnRechtspraak\Model\Personen\v1':          metadata/MijnRechtspraak/Model/Personen/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Personen\v1':        metadata/MijnRechtspraak/Service/Personen/v1
+    'ToezichtS2S\MijnRechtspraak\ZaakService\v1':             metadata/MijnRechtspraak/ZaakService/v1
+    'ToezichtS2S\MijnRechtspraak\Service\Zaken\v1':           metadata/MijnRechtspraak/Service/Zaken/v1
+    'ToezichtS2S\MijnRechtspraak\Model\Zaken\v1':             metadata/MijnRechtspraak/Model/Zaken/v1
+    'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          metadata/MijnRechtspraak/Model/Algemeen/v1
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v1
+
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    metadata/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2
 
     'ToezichtS2S\Algemeen\v2':                                metadata/Algemeen/v2
     'ToezichtS2S\Bericht\v2':                                 metadata/Bericht/v2
@@ -97,5 +115,6 @@ soap_client:
     './config/wsdl/metadata.v1.xml': ~
     './config/wsdl/notificatie.v1.xml': ~
     './config/wsdl/persoon.v1.xml': ~
+    './config/wsdl/zaak.v1.xml': ~
 
 

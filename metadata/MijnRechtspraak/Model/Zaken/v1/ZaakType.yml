@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakType:
+    properties:
+        zaakType:
+            expose: true
+            access_type: public_method
+            serialized_name: ZaakType
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getZaakType
+                setter: setZaakType
+            type: string

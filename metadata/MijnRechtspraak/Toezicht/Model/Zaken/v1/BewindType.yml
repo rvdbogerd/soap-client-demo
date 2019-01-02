@@ -1,0 +1,42 @@
+ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1\BewindType:
+    properties:
+        datumEindeBepaaldeDuur:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumEindeBepaaldeDuur
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1'
+            accessor:
+                getter: getDatumEindeBepaaldeDuur
+                setter: setDatumEindeBepaaldeDuur
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        indicatieBeperkt:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieBeperkt
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1'
+            accessor:
+                getter: getIndicatieBeperkt
+                setter: setIndicatieBeperkt
+            type: bool
+        indicatieTaakverdeling:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieTaakverdeling
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1'
+            accessor:
+                getter: getIndicatieTaakverdeling
+                setter: setIndicatieTaakverdeling
+            type: bool
+        toelichtingBeperking:
+            expose: true
+            access_type: public_method
+            serialized_name: ToelichtingBeperking
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1'
+            accessor:
+                getter: getToelichtingBeperking
+                setter: setToelichtingBeperking
+            type: string

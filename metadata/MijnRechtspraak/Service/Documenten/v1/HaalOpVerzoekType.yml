@@ -1,0 +1,27 @@
+ToezichtS2S\MijnRechtspraak\Service\Documenten\v1\HaalOpVerzoekType:
+    properties:
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Documenten/v1'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: array<ToezichtS2S\Service\Algemeen\v1\ObjectReferentieType>
+            xml_list:
+                inline: false
+                entry_name: ObjectReferentie
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+        indicatieBijlage:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieBijlage
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Documenten/v1'
+            accessor:
+                getter: getIndicatieBijlage
+                setter: setIndicatieBijlage
+            type: bool

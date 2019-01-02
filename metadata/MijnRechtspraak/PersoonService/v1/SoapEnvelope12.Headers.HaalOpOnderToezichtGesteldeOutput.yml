@@ -1,0 +1,3 @@
+ToezichtS2S\MijnRechtspraak\PersoonService\v1\SoapEnvelope12\Headers\HaalOpOnderToezichtGesteldeOutput:
+    xml_namespaces:
+        SOAP: 'http://www.w3.org/2003/05/soap-envelope'

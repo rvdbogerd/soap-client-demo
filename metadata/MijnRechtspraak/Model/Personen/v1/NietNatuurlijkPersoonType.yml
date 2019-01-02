@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\NietNatuurlijkPersoonType:
+    properties:
+        naam:
+            expose: true
+            access_type: public_method
+            serialized_name: Naam
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getNaam
+                setter: setNaam
+            type: string

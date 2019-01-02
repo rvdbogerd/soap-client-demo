@@ -1,0 +1,13 @@
+ToezichtS2S\MijnRechtspraak\ZaakService\v1\SoapParts\WijzigBetrokkenPersoonInput:
+    xml_root_namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/ZaakService/v1'
+            serialized_name: WijzigBetrokkenPersoon
+            type: ToezichtS2S\MijnRechtspraak\ZaakService\v1\WijzigBetrokkenPersoon

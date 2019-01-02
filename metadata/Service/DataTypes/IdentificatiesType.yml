@@ -1,0 +1,16 @@
+ToezichtS2S\Service\DataTypes\IdentificatiesType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            xml_list:
+                inline: true
+                entry_name: Identificatie
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            type: array<string>

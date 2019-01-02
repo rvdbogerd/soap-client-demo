@@ -1,0 +1,12 @@
+ToezichtS2S\Service\Algemeen\v1\StandaardHaalOpVerzoekType:
+    properties:
+        object:
+            expose: true
+            access_type: public_method
+            serialized_name: Object
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getObject
+                setter: setObject
+            type: ToezichtS2S\Service\Algemeen\v1\ObjectIdentificatieType

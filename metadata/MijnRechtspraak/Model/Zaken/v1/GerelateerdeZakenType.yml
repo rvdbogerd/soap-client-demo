@@ -1,0 +1,16 @@
+ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\GerelateerdeZakenType:
+    properties:
+        gerelateerdeZaak:
+            expose: true
+            access_type: public_method
+            serialized_name: GerelateerdeZaak
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getGerelateerdeZaak
+                setter: setGerelateerdeZaak
+            xml_list:
+                inline: true
+                entry_name: GerelateerdeZaak
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakRelatieType>

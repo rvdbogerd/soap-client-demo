@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Service\Berichten\v1\HaalOpVerzoekType:
+    properties:
+        indicatieInclusiefBijlagen:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieInclusiefBijlagen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Service/Berichten/v1'
+            accessor:
+                getter: getIndicatieInclusiefBijlagen
+                setter: setIndicatieInclusiefBijlagen
+            type: bool

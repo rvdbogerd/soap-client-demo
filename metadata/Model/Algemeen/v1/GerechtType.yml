@@ -1,0 +1,22 @@
+ToezichtS2S\Model\Algemeen\v1\GerechtType:
+    properties:
+        behandellocatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Behandellocatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getBehandellocatie
+                setter: setBehandellocatie
+            type: string
+        instantie:
+            expose: true
+            access_type: public_method
+            serialized_name: Instantie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Model/Algemeen/v1'
+            accessor:
+                getter: getInstantie
+                setter: setInstantie
+            type: string

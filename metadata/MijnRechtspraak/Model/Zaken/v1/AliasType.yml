@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\AliasType:
+    properties:
+        nummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Nummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getNummer
+                setter: setNummer
+            type: string

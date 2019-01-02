@@ -1,0 +1,42 @@
+ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakRelatieType:
+    properties:
+        datumAanvang:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumAanvang
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getDatumAanvang
+                setter: setDatumAanvang
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumEinde:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumEinde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getDatumEinde
+                setter: setDatumEinde
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        relatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Relatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getRelatie
+                setter: setRelatie
+            type: string
+        zaak:
+            expose: true
+            access_type: public_method
+            serialized_name: Zaak
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1'
+            accessor:
+                getter: getZaak
+                setter: setZaak
+            type: ToezichtS2S\MijnRechtspraak\Model\Zaken\v1\ZaakReferentieType

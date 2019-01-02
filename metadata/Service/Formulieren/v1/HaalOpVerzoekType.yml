@@ -1,0 +1,47 @@
+ToezichtS2S\Service\Formulieren\v1\HaalOpVerzoekType:
+    properties:
+        formulierSjabloon:
+            expose: true
+            access_type: public_method
+            serialized_name: FormulierSjabloon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Formulieren/v1'
+            accessor:
+                getter: getFormulierSjabloon
+                setter: setFormulierSjabloon
+            type: string
+        gegevens:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegevens
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Formulieren/v1'
+            accessor:
+                getter: getGegevens
+                setter: setGegevens
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: Identificatie
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+        indicatieExclusiefInvoer:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieExclusiefInvoer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Formulieren/v1'
+            accessor:
+                getter: getIndicatieExclusiefInvoer
+                setter: setIndicatieExclusiefInvoer
+            type: bool
+        indicatieInclusiefBijlagen:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieInclusiefBijlagen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Formulieren/v1'
+            accessor:
+                getter: getIndicatieInclusiefBijlagen
+                setter: setIndicatieInclusiefBijlagen
+            type: bool
