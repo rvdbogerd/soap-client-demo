@@ -1,0 +1,42 @@
+ToezichtS2S\Taak\v2\TaakDetailType:
+    properties:
+        datumGerappelleerd:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumGerappelleerd
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumGerappelleerd
+                setter: setDatumGerappelleerd
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumGereed:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumGereed
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumGereed
+                setter: setDatumGereed
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumGereedNaUitstel:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumGereedNaUitstel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumGereedNaUitstel
+                setter: setDatumGereedNaUitstel
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumVanaf:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumVanaf
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumVanaf
+                setter: setDatumVanaf
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

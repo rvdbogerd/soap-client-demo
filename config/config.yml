@@ -37,6 +37,7 @@ soap_client:
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon':    'ToezichtS2S\Formulier\v2\Sjabloon'
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak':      'ToezichtS2S\Formulier\v2\Opmaak'
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data':        'ToezichtS2S\Formulier\v2\Data'
+    'http://rechtspraak.nl/ToezichtS2S/Taak/v2':                  'ToezichtS2S\Taak\v2'
 
   destinations_php:
     'ToezichtS2S\Model\Algemeen\v1':                          src/ToezichtS2S/Model/Algemeen/v1
@@ -71,6 +72,7 @@ soap_client:
     'ToezichtS2S\Formulier\v2\Sjabloon':                      src/ToezichtS2S/Formulier/v2/Sjabloon
     'ToezichtS2S\Formulier\v2\Opmaak':                        src/ToezichtS2S/Formulier/v2/Opmaak
     'ToezichtS2S\Formulier\v2\Data':                          src/ToezichtS2S/Formulier/v2/Data
+    'ToezichtS2S\Taak\v2':                                    src/ToezichtS2S/Taak/v2
 
   destinations_jms:
     'ToezichtS2S\Serialization':                              metadata/Serialization
@@ -105,6 +107,7 @@ soap_client:
     'ToezichtS2S\Formulier\v2\Sjabloon':                      metadata/Formulier/v2/Sjabloon
     'ToezichtS2S\Formulier\v2\Opmaak':                        metadata/Formulier/v2/Opmaak
     'ToezichtS2S\Formulier\v2\Data':                          metadata/Formulier/v2/Data
+    'ToezichtS2S\Taak\v2':                                    metadata/Taak/v2
 
   metadata:
 #    'https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/metadata?singleWsdl': ~
@@ -115,6 +118,7 @@ soap_client:
     './config/wsdl/metadata.v1.xml': ~
     './config/wsdl/notificatie.v1.xml': ~
     './config/wsdl/persoon.v1.xml': ~
+    './config/wsdl/taak.v2.xml': ~
     './config/wsdl/zaak.v1.xml': ~
 
 

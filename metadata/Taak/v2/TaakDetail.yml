@@ -1,0 +1,3 @@
+ToezichtS2S\Taak\v2\TaakDetail:
+    xml_root_name: TaakDetail
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'

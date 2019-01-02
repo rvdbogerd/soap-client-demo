@@ -1,0 +1,12 @@
+ToezichtS2S\Taak\v2\HaalOpAntwoordType:
+    properties:
+        taak:
+            expose: true
+            access_type: public_method
+            serialized_name: Taak
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getTaak
+                setter: setTaak
+            type: ToezichtS2S\Taak\v2\TaakDetailType

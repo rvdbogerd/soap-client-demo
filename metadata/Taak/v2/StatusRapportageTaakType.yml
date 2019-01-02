@@ -1,0 +1,12 @@
+ToezichtS2S\Taak\v2\StatusRapportageTaakType:
+    properties:
+        peildatum:
+            expose: true
+            access_type: public_method
+            serialized_name: Peildatum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getPeildatum
+                setter: setPeildatum
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date

@@ -1,0 +1,22 @@
+ToezichtS2S\Taak\v2\RapportageTaakType:
+    properties:
+        datumAanvangPeriode:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumAanvangPeriode
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumAanvangPeriode
+                setter: setDatumAanvangPeriode
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
+        datumEindePeriode:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumEindePeriode
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Taak/v2'
+            accessor:
+                getter: getDatumEindePeriode
+                setter: setDatumEindePeriode
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date
