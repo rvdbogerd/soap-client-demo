@@ -1,0 +1,37 @@
+ToezichtS2S\Formulier\v2\RaadpleegFormulierType:
+    properties:
+        data:
+            expose: true
+            access_type: public_method
+            serialized_name: Data
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getData
+                setter: setData
+            type: ToezichtS2S\Formulier\v2\FormulierType
+        sjabloon:
+            expose: true
+            access_type: public_method
+            serialized_name: Sjabloon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSjabloon
+                setter: setSjabloon
+            type: ToezichtS2S\Formulier\v2\FormulierSjabloonDetailType
+        toegestaneVerwerking:
+            expose: true
+            access_type: public_method
+            serialized_name: ToegestaneVerwerking
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getToegestaneVerwerking
+                setter: setToegestaneVerwerking
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: SoortVerwerking
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'

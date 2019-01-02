@@ -1,0 +1,14 @@
+ToezichtS2S\Formulier\v2\ZoekSjablonenResponse:
+    xml_root_name: ZoekSjablonenResponse
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+    properties:
+        zoekSjablonenResult:
+            expose: true
+            access_type: public_method
+            serialized_name: ZoekSjablonenResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getZoekSjablonenResult
+                setter: setZoekSjablonenResult
+            type: ToezichtS2S\Formulier\v2\ZoekSjablonenAntwoordType

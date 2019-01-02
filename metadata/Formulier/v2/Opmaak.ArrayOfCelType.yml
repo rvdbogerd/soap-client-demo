@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Opmaak\ArrayOfCelType:
+    properties:
+        cel:
+            expose: true
+            access_type: public_method
+            serialized_name: Cel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getCel
+                setter: setCel
+            xml_list:
+                inline: true
+                entry_name: Cel
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\CelType>

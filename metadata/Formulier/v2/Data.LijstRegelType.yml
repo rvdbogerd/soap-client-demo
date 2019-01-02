@@ -1,0 +1,27 @@
+ToezichtS2S\Formulier\v2\Data\LijstRegelType:
+    properties:
+        gegevens:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegevens
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getGegevens
+                setter: setGegevens
+            type: array<ToezichtS2S\Formulier\v2\Data\GegevenType>
+            xml_list:
+                inline: false
+                entry_name: Gegeven
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+        regelnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Regelnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getRegelnummer
+                setter: setRegelnummer
+            type: int

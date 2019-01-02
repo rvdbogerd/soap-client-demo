@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Opmaak\ArrayOfElementType:
+    properties:
+        element:
+            expose: true
+            access_type: public_method
+            serialized_name: Element
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getElement
+                setter: setElement
+            xml_list:
+                inline: true
+                entry_name: Element
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\ElementType>

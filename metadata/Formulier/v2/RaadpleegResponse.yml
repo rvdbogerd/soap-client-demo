@@ -1,0 +1,14 @@
+ToezichtS2S\Formulier\v2\RaadpleegResponse:
+    xml_root_name: RaadpleegResponse
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+    properties:
+        raadpleegResult:
+            expose: true
+            access_type: public_method
+            serialized_name: RaadpleegResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getRaadpleegResult
+                setter: setRaadpleegResult
+            type: ToezichtS2S\Formulier\v2\RaadpleegAntwoordType

@@ -1,0 +1,45 @@
+<?php
+
+namespace ToezichtS2S\Formulier\v2;
+
+use ToezichtS2S\Algemeen\v2\StandaardMaakAanAntwoordType;
+
+/**
+ * Class representing DienInAntwoordType
+ *
+ *
+ * XSD Type: DienInAntwoord
+ */
+class DienInAntwoordType extends StandaardMaakAanAntwoordType
+{
+
+    /**
+     * @property string $volgnummer
+     */
+    private $volgnummer = null;
+
+    /**
+     * Gets as volgnummer
+     *
+     * @return string
+     */
+    public function getVolgnummer()
+    {
+        return $this->volgnummer;
+    }
+
+    /**
+     * Sets a new volgnummer
+     *
+     * @param string $volgnummer
+     * @return self
+     */
+    public function setVolgnummer(string $volgnummer = null)
+    {
+        $this->volgnummer = $volgnummer;
+        return $this;
+    }
+
+
+}
+

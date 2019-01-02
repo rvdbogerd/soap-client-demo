@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\Data\DatumTijdType:
+    properties:
+        datum:
+            expose: true
+            access_type: public_method
+            serialized_name: Datum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getDatum
+                setter: setDatum
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime

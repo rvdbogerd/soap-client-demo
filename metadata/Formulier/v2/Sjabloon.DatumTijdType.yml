@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\Sjabloon\DatumTijdType:
+    properties:
+        indicatieDatum:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieDatum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieDatum
+                setter: setIndicatieDatum
+            type: bool

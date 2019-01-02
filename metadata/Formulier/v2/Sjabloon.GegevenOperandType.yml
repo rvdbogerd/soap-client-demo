@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\Sjabloon\GegevenOperandType:
+    properties:
+        gegevenIdentificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: GegevenIdentificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getGegevenIdentificatie
+                setter: setGegevenIdentificatie
+            type: string

@@ -1,0 +1,26 @@
+ToezichtS2S\Formulier\v2\SoapEnvelope12\Messages\RaadpleegOutput:
+    xml_root_name: 'SOAP:Envelope'
+    xml_root_namespace: 'http://www.w3.org/2003/05/soap-envelope'
+    xml_namespaces:
+        SOAP: 'http://www.w3.org/2003/05/soap-envelope'
+    properties:
+        body:
+            expose: true
+            access_type: public_method
+            type: ToezichtS2S\Formulier\v2\SoapParts\RaadpleegOutput
+            serialized_name: Body
+            xml_element:
+                namespace: 'http://www.w3.org/2003/05/soap-envelope'
+            accessor:
+                getter: getBody
+                setter: setBody
+        header:
+            expose: true
+            access_type: public_method
+            type: GoetasWebservices\SoapServices\SoapClient\Arguments\Headers\Handler\HeaderPlaceholder
+            serialized_name: Header
+            xml_element:
+                namespace: 'http://www.w3.org/2003/05/soap-envelope'
+            accessor:
+                getter: getHeader
+                setter: setHeader

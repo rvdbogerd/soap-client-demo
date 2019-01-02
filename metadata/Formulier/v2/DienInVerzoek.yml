@@ -1,0 +1,3 @@
+ToezichtS2S\Formulier\v2\DienInVerzoek:
+    xml_root_name: DienInVerzoek
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'

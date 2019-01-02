@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\ArrayOfRaadpleegFormulierType:
+    properties:
+        raadpleegFormulier:
+            expose: true
+            access_type: public_method
+            serialized_name: RaadpleegFormulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getRaadpleegFormulier
+                setter: setRaadpleegFormulier
+            xml_list:
+                inline: true
+                entry_name: RaadpleegFormulier
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            type: array<ToezichtS2S\Formulier\v2\RaadpleegFormulierType>

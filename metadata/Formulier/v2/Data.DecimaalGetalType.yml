@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\Data\DecimaalGetalType:
+    properties:
+        getal:
+            expose: true
+            access_type: public_method
+            serialized_name: Getal
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getGetal
+                setter: setGetal
+            type: float

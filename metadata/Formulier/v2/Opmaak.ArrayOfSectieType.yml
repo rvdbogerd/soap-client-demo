@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Opmaak\ArrayOfSectieType:
+    properties:
+        sectie:
+            expose: true
+            access_type: public_method
+            serialized_name: Sectie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getSectie
+                setter: setSectie
+            xml_list:
+                inline: true
+                entry_name: Sectie
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\SectieType>

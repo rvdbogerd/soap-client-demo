@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\Opmaak\TekstElementType:
+    properties:
+        indicatieKopje:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieKopje
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getIndicatieKopje
+                setter: setIndicatieKopje
+            type: bool
+        tekst:
+            expose: true
+            access_type: public_method
+            serialized_name: Tekst
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getTekst
+                setter: setTekst
+            type: string

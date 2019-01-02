@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\Data\GegevenType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            type: string
+        waarde:
+            expose: true
+            access_type: public_method
+            serialized_name: Waarde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getWaarde
+                setter: setWaarde
+            type: ToezichtS2S\Formulier\v2\Data\WaardeType

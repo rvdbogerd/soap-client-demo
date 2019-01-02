@@ -1,0 +1,32 @@
+ToezichtS2S\Formulier\v2\FormulierSjabloonIdentificatieType:
+    properties:
+        beginDatum:
+            expose: true
+            access_type: public_method
+            serialized_name: BeginDatum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getBeginDatum
+                setter: setBeginDatum
+            type: ToezichtS2S\Formulier\v2\Data\DatumTijdType
+        eindDatum:
+            expose: true
+            access_type: public_method
+            serialized_name: EindDatum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getEindDatum
+                setter: setEindDatum
+            type: ToezichtS2S\Formulier\v2\Data\DatumTijdType
+        titel:
+            expose: true
+            access_type: public_method
+            serialized_name: Titel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getTitel
+                setter: setTitel
+            type: string

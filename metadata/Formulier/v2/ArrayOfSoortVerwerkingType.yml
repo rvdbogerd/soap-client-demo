@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\ArrayOfSoortVerwerkingType:
+    properties:
+        soortVerwerking:
+            expose: true
+            access_type: public_method
+            serialized_name: SoortVerwerking
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSoortVerwerking
+                setter: setSoortVerwerking
+            xml_list:
+                inline: true
+                entry_name: SoortVerwerking
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            type: array<string>

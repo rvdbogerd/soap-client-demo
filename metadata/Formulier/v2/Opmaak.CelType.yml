@@ -1,0 +1,32 @@
+ToezichtS2S\Formulier\v2\Opmaak\CelType:
+    properties:
+        element:
+            expose: true
+            access_type: public_method
+            serialized_name: Element
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getElement
+                setter: setElement
+            type: ToezichtS2S\Formulier\v2\Opmaak\ElementType
+        kolom:
+            expose: true
+            access_type: public_method
+            serialized_name: Kolom
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getKolom
+                setter: setKolom
+            type: int
+        rij:
+            expose: true
+            access_type: public_method
+            serialized_name: Rij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getRij
+                setter: setRij
+            type: int

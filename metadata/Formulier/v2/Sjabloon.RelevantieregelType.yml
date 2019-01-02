@@ -1,0 +1,42 @@
+ToezichtS2S\Formulier\v2\Sjabloon\RelevantieregelType:
+    properties:
+        linkerOperand:
+            expose: true
+            access_type: public_method
+            serialized_name: LinkerOperand
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getLinkerOperand
+                setter: setLinkerOperand
+            type: ToezichtS2S\Formulier\v2\Sjabloon\OperandType
+        operator:
+            expose: true
+            access_type: public_method
+            serialized_name: Operator
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getOperator
+                setter: setOperator
+            type: string
+        rechterOperand:
+            expose: true
+            access_type: public_method
+            serialized_name: RechterOperand
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getRechterOperand
+                setter: setRechterOperand
+            type: ToezichtS2S\Formulier\v2\Sjabloon\OperandType
+        relevantGegevenIdentificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: RelevantGegevenIdentificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getRelevantGegevenIdentificatie
+                setter: setRelevantGegevenIdentificatie
+            type: string

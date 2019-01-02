@@ -1,0 +1,3 @@
+ToezichtS2S\Formulier\v2\FormulierDetail:
+    xml_root_name: FormulierDetail
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'

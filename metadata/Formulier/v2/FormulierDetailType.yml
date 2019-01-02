@@ -1,0 +1,82 @@
+ToezichtS2S\Formulier\v2\FormulierDetailType:
+    properties:
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectReferentieType
+        datumIngediend:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumIngediend
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getDatumIngediend
+                setter: setDatumIngediend
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        datumLaatstIngediend:
+            expose: true
+            access_type: public_method
+            serialized_name: DatumLaatstIngediend
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getDatumLaatstIngediend
+                setter: setDatumLaatstIngediend
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        toegestaneVerwerking:
+            expose: true
+            access_type: public_method
+            serialized_name: ToegestaneVerwerking
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getToegestaneVerwerking
+                setter: setToegestaneVerwerking
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: SoortVerwerking
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+        volgnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Volgnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getVolgnummer
+                setter: setVolgnummer
+            type: string
+        voorgaandFormulierIdentificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: VoorgaandFormulierIdentificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getVoorgaandFormulierIdentificatie
+                setter: setVoorgaandFormulierIdentificatie
+            type: string
+        waarden:
+            expose: true
+            access_type: public_method
+            serialized_name: Waarden
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getWaarden
+                setter: setWaarden
+            type: array<ToezichtS2S\Formulier\v2\Data\GegevenType>
+            xml_list:
+                inline: false
+                entry_name: Gegeven
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'

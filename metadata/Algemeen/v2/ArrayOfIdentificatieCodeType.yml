@@ -1,0 +1,16 @@
+ToezichtS2S\Algemeen\v2\ArrayOfIdentificatieCodeType:
+    properties:
+        identificatieCode:
+            expose: true
+            access_type: public_method
+            serialized_name: IdentificatieCode
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getIdentificatieCode
+                setter: setIdentificatieCode
+            xml_list:
+                inline: true
+                entry_name: IdentificatieCode
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            type: array<string>

@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\Sjabloon\GeheelGetalType:
+    properties:
+        maximum:
+            expose: true
+            access_type: public_method
+            serialized_name: Maximum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getMaximum
+                setter: setMaximum
+            type: int
+        minimum:
+            expose: true
+            access_type: public_method
+            serialized_name: Minimum
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getMinimum
+                setter: setMinimum
+            type: int

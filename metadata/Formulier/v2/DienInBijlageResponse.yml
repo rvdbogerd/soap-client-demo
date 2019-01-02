@@ -1,0 +1,14 @@
+ToezichtS2S\Formulier\v2\DienInBijlageResponse:
+    xml_root_name: DienInBijlageResponse
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+    properties:
+        dienInBijlageResult:
+            expose: true
+            access_type: public_method
+            serialized_name: DienInBijlageResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getDienInBijlageResult
+                setter: setDienInBijlageResult
+            type: ToezichtS2S\Formulier\v2\DienInBijlageAntwoordType

@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\Sjabloon\TekstType:
+    properties:
+        indicatieMeerregelig:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieMeerregelig
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieMeerregelig
+                setter: setIndicatieMeerregelig
+            type: bool
+        maximaleLengte:
+            expose: true
+            access_type: public_method
+            serialized_name: MaximaleLengte
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getMaximaleLengte
+                setter: setMaximaleLengte
+            type: int

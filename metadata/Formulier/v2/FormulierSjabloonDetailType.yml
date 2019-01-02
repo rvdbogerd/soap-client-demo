@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\FormulierSjabloonDetailType:
+    properties:
+        soortFormulier:
+            expose: true
+            access_type: public_method
+            serialized_name: SoortFormulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSoortFormulier
+                setter: setSoortFormulier
+            type: string

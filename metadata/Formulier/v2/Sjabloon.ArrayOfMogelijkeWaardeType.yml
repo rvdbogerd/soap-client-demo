@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Sjabloon\ArrayOfMogelijkeWaardeType:
+    properties:
+        mogelijkeWaarde:
+            expose: true
+            access_type: public_method
+            serialized_name: MogelijkeWaarde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getMogelijkeWaarde
+                setter: setMogelijkeWaarde
+            xml_list:
+                inline: true
+                entry_name: MogelijkeWaarde
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            type: array<ToezichtS2S\Formulier\v2\Sjabloon\MogelijkeWaardeType>

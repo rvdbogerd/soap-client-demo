@@ -1,0 +1,97 @@
+ToezichtS2S\Formulier\v2\FormulierSjabloonSpecificatieType:
+    properties:
+        titel:
+            expose: true
+            access_type: public_method
+            serialized_name: Titel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getTitel
+                setter: setTitel
+            type: string
+        soortFormulier:
+            expose: true
+            access_type: public_method
+            serialized_name: SoortFormulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSoortFormulier
+                setter: setSoortFormulier
+            type: string
+        indicatieAanmakenMogelijk:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieAanmakenMogelijk
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getIndicatieAanmakenMogelijk
+                setter: setIndicatieAanmakenMogelijk
+            type: bool
+        indicatieConceptMogelijk:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieConceptMogelijk
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getIndicatieConceptMogelijk
+                setter: setIndicatieConceptMogelijk
+            type: bool
+        toelichtingFormulier:
+            expose: true
+            access_type: public_method
+            serialized_name: ToelichtingFormulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getToelichtingFormulier
+                setter: setToelichtingFormulier
+            type: string
+        gegevens:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegevens
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getGegevens
+                setter: setGegevens
+            type: array<ToezichtS2S\Formulier\v2\Sjabloon\GegevenType>
+            xml_list:
+                inline: false
+                entry_name: Gegeven
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+        relevantieregels:
+            expose: true
+            access_type: public_method
+            serialized_name: Relevantieregels
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getRelevantieregels
+                setter: setRelevantieregels
+            type: array<ToezichtS2S\Formulier\v2\Sjabloon\RelevantieregelType>
+            xml_list:
+                inline: false
+                entry_name: Relevantieregel
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+        secties:
+            expose: true
+            access_type: public_method
+            serialized_name: Secties
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSecties
+                setter: setSecties
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\SectieType>
+            xml_list:
+                inline: false
+                entry_name: Sectie
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'

@@ -1,0 +1,42 @@
+ToezichtS2S\Formulier\v2\HaalOpBijlageVerzoekType:
+    properties:
+        formulier:
+            expose: true
+            access_type: public_method
+            serialized_name: Formulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getFormulier
+                setter: setFormulier
+            type: string
+        gegeven:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegeven
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getGegeven
+                setter: setGegeven
+            type: string
+        modelVersie:
+            expose: true
+            access_type: public_method
+            serialized_name: ModelVersie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getModelVersie
+                setter: setModelVersie
+            type: int
+        regelnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Regelnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getRegelnummer
+                setter: setRegelnummer
+            type: int

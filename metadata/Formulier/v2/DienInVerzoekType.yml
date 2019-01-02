@@ -1,0 +1,77 @@
+ToezichtS2S\Formulier\v2\DienInVerzoekType:
+    properties:
+        formulier:
+            expose: true
+            access_type: public_method
+            serialized_name: Formulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getFormulier
+                setter: setFormulier
+            type: string
+        volgnummer:
+            expose: true
+            access_type: public_method
+            serialized_name: Volgnummer
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getVolgnummer
+                setter: setVolgnummer
+            type: string
+        formulierSjabloon:
+            expose: true
+            access_type: public_method
+            serialized_name: FormulierSjabloon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getFormulierSjabloon
+                setter: setFormulierSjabloon
+            type: string
+        modelVersie:
+            expose: true
+            access_type: public_method
+            serialized_name: ModelVersie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getModelVersie
+                setter: setModelVersie
+            type: int
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnType
+        indicatieConcept:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieConcept
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getIndicatieConcept
+                setter: setIndicatieConcept
+            type: bool
+        waarden:
+            expose: true
+            access_type: public_method
+            serialized_name: Waarden
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getWaarden
+                setter: setWaarden
+            type: array<ToezichtS2S\Formulier\v2\Data\GegevenType>
+            xml_list:
+                inline: false
+                entry_name: Gegeven
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'

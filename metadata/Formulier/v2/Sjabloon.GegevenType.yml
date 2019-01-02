@@ -1,0 +1,52 @@
+ToezichtS2S\Formulier\v2\Sjabloon\GegevenType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            type: string
+        indicatieAlleenLezen:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieAlleenLezen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieAlleenLezen
+                setter: setIndicatieAlleenLezen
+            type: bool
+        indicatieExtraValidatie:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieExtraValidatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieExtraValidatie
+                setter: setIndicatieExtraValidatie
+            type: bool
+        indicatieRelevant:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieRelevant
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieRelevant
+                setter: setIndicatieRelevant
+            type: bool
+        indicatieVerplicht:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieVerplicht
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getIndicatieVerplicht
+                setter: setIndicatieVerplicht
+            type: bool

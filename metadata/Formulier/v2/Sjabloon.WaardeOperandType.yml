@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\Sjabloon\WaardeOperandType:
+    properties:
+        waarde:
+            expose: true
+            access_type: public_method
+            serialized_name: Waarde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getWaarde
+                setter: setWaarde
+            type: ToezichtS2S\Formulier\v2\Data\EnkelvoudigeWaardeType

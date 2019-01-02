@@ -1,0 +1,13 @@
+ToezichtS2S\Formulier\v2\SoapParts\DienInOutput:
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            serialized_name: DienInResponse
+            type: ToezichtS2S\Formulier\v2\DienInResponse

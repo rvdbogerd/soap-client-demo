@@ -1,0 +1,17 @@
+ToezichtS2S\Formulier\v2\Sjabloon\AfbeeldingType:
+    properties:
+        toegestaneContent:
+            expose: true
+            access_type: public_method
+            serialized_name: ToegestaneContent
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getToegestaneContent
+                setter: setToegestaneContent
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: SoortMimeType
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'

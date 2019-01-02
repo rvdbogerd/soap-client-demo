@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\Opmaak\KolomType:
+    properties:
+        breedte:
+            expose: true
+            access_type: public_method
+            serialized_name: Breedte
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getBreedte
+                setter: setBreedte
+            type: int
+        index:
+            expose: true
+            access_type: public_method
+            serialized_name: Index
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getIndex
+                setter: setIndex
+            type: int

@@ -1,0 +1,3 @@
+ToezichtS2S\Formulier\v2\HaalOpVerzoek:
+    xml_root_name: HaalOpVerzoek
+    xml_root_namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'

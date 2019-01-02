@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\HaalOpAntwoordType:
+    properties:
+        sjabloon:
+            expose: true
+            access_type: public_method
+            serialized_name: Sjabloon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSjabloon
+                setter: setSjabloon
+            type: ToezichtS2S\Formulier\v2\FormulierSjabloonReferentieType
+        formulier:
+            expose: true
+            access_type: public_method
+            serialized_name: Formulier
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getFormulier
+                setter: setFormulier
+            type: ToezichtS2S\Formulier\v2\FormulierDetailType

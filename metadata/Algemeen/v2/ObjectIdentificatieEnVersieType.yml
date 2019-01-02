@@ -1,0 +1,12 @@
+ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnVersieType:
+    properties:
+        modelVersie:
+            expose: true
+            access_type: public_method
+            serialized_name: ModelVersie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'
+            accessor:
+                getter: getModelVersie
+                setter: setModelVersie
+            type: int

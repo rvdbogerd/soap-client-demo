@@ -1,0 +1,42 @@
+ToezichtS2S\Formulier\v2\Opmaak\SectieType:
+    properties:
+        titel:
+            expose: true
+            access_type: public_method
+            serialized_name: Titel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getTitel
+                setter: setTitel
+            type: string
+        secties:
+            expose: true
+            access_type: public_method
+            serialized_name: Secties
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getSecties
+                setter: setSecties
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\SectieType>
+            xml_list:
+                inline: false
+                entry_name: Sectie
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+        elementen:
+            expose: true
+            access_type: public_method
+            serialized_name: Elementen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getElementen
+                setter: setElementen
+            type: array<ToezichtS2S\Formulier\v2\Opmaak\ElementType>
+            xml_list:
+                inline: false
+                entry_name: Element
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'

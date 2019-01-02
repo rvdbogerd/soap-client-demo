@@ -1,0 +1,52 @@
+ToezichtS2S\Formulier\v2\Opmaak\VraagType:
+    properties:
+        eenheidAchtervoegsel:
+            expose: true
+            access_type: public_method
+            serialized_name: EenheidAchtervoegsel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getEenheidAchtervoegsel
+                setter: setEenheidAchtervoegsel
+            type: string
+        eenheidVoorvoegsel:
+            expose: true
+            access_type: public_method
+            serialized_name: EenheidVoorvoegsel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getEenheidVoorvoegsel
+                setter: setEenheidVoorvoegsel
+            type: string
+        gegevenIdentificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: GegevenIdentificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getGegevenIdentificatie
+                setter: setGegevenIdentificatie
+            type: string
+        tekst:
+            expose: true
+            access_type: public_method
+            serialized_name: Tekst
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getTekst
+                setter: setTekst
+            type: string
+        toelichting:
+            expose: true
+            access_type: public_method
+            serialized_name: Toelichting
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak'
+            accessor:
+                getter: getToelichting
+                setter: setToelichting
+            type: string

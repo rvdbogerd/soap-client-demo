@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Sjabloon\ArrayOfRelevantieregelType:
+    properties:
+        relevantieregel:
+            expose: true
+            access_type: public_method
+            serialized_name: Relevantieregel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getRelevantieregel
+                setter: setRelevantieregel
+            xml_list:
+                inline: true
+                entry_name: Relevantieregel
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            type: array<ToezichtS2S\Formulier\v2\Sjabloon\RelevantieregelType>

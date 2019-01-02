@@ -1,0 +1,17 @@
+ToezichtS2S\Formulier\v2\ZoekSjablonenAntwoordType:
+    properties:
+        sjablonen:
+            expose: true
+            access_type: public_method
+            serialized_name: Sjablonen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSjablonen
+                setter: setSjablonen
+            type: array<ToezichtS2S\Formulier\v2\FormulierSjabloonIdentificatieType>
+            xml_list:
+                inline: false
+                entry_name: FormulierSjabloonIdentificatie
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'

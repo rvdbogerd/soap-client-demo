@@ -1,0 +1,27 @@
+ToezichtS2S\Formulier\v2\RaadpleegVerzoekType:
+    properties:
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectIdentificatieEnType
+        formulierSoort:
+            expose: true
+            access_type: public_method
+            serialized_name: FormulierSoort
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getFormulierSoort
+                setter: setFormulierSoort
+            type: array<string>
+            xml_list:
+                inline: false
+                entry_name: IdentificatieCode
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2'

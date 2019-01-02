@@ -1,0 +1,12 @@
+ToezichtS2S\Formulier\v2\HaalOpVerzoekType:
+    properties:
+        indicatieInclusiefBijlagen:
+            expose: true
+            access_type: public_method
+            serialized_name: IndicatieInclusiefBijlagen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getIndicatieInclusiefBijlagen
+                setter: setIndicatieInclusiefBijlagen
+            type: bool

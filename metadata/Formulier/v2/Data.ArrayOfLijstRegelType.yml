@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Data\ArrayOfLijstRegelType:
+    properties:
+        lijstRegel:
+            expose: true
+            access_type: public_method
+            serialized_name: LijstRegel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            accessor:
+                getter: getLijstRegel
+                setter: setLijstRegel
+            xml_list:
+                inline: true
+                entry_name: LijstRegel
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data'
+            type: array<ToezichtS2S\Formulier\v2\Data\LijstRegelType>

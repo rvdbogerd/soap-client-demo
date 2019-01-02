@@ -1,0 +1,16 @@
+ToezichtS2S\Formulier\v2\Sjabloon\ArrayOfGegevenType:
+    properties:
+        gegeven:
+            expose: true
+            access_type: public_method
+            serialized_name: Gegeven
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            accessor:
+                getter: getGegeven
+                setter: setGegeven
+            xml_list:
+                inline: true
+                entry_name: Gegeven
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon'
+            type: array<ToezichtS2S\Formulier\v2\Sjabloon\GegevenType>

@@ -1,0 +1,22 @@
+ToezichtS2S\Formulier\v2\FormulierType:
+    properties:
+        behoortBij:
+            expose: true
+            access_type: public_method
+            serialized_name: BehoortBij
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getBehoortBij
+                setter: setBehoortBij
+            type: ToezichtS2S\Algemeen\v2\ObjectReferentieType
+        sjabloon:
+            expose: true
+            access_type: public_method
+            serialized_name: Sjabloon
+            xml_element:
+                namespace: 'http://rechtspraak.nl/ToezichtS2S/Formulier/v2'
+            accessor:
+                getter: getSjabloon
+                setter: setSjabloon
+            type: string
