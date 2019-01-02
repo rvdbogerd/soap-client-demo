@@ -1,0 +1,42 @@
+ToezichtS2S\Service\DataTypes\CodelijstWaardeType:
+    properties:
+        geldigTotEnMet:
+            expose: true
+            access_type: public_method
+            serialized_name: GeldigTotEnMet
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            accessor:
+                getter: getGeldigTotEnMet
+                setter: setGeldigTotEnMet
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        geldigVanaf:
+            expose: true
+            access_type: public_method
+            serialized_name: GeldigVanaf
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            accessor:
+                getter: getGeldigVanaf
+                setter: setGeldigVanaf
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime
+        titel:
+            expose: true
+            access_type: public_method
+            serialized_name: Titel
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            accessor:
+                getter: getTitel
+                setter: setTitel
+            type: string
+        waarde:
+            expose: true
+            access_type: public_method
+            serialized_name: Waarde
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/DataTypes'
+            accessor:
+                getter: getWaarde
+                setter: setWaarde
+            type: string

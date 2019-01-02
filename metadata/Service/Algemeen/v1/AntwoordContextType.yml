@@ -1,0 +1,12 @@
+ToezichtS2S\Service\Algemeen\v1\AntwoordContextType:
+    properties:
+        externeReferentie:
+            expose: true
+            access_type: public_method
+            serialized_name: ExterneReferentie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getExterneReferentie
+                setter: setExterneReferentie
+            type: string

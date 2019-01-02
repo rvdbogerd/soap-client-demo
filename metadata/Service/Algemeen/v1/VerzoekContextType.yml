@@ -1,0 +1,32 @@
+ToezichtS2S\Service\Algemeen\v1\VerzoekContextType:
+    properties:
+        organisatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Organisatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getOrganisatie
+                setter: setOrganisatie
+            type: string
+        register:
+            expose: true
+            access_type: public_method
+            serialized_name: Register
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getRegister
+                setter: setRegister
+            type: string
+        softwareVersie:
+            expose: true
+            access_type: public_method
+            serialized_name: SoftwareVersie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getSoftwareVersie
+                setter: setSoftwareVersie
+            type: ToezichtS2S\Service\Algemeen\v1\SoftwareVersieType

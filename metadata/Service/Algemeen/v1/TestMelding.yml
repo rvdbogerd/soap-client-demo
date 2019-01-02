@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Algemeen\v1\TestMelding:
+    xml_root_name: TestMelding
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'

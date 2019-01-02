@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Metadata\v1\RaadpleegCodelijstRelatieVerzoek:
+    xml_root_name: RaadpleegCodelijstRelatieVerzoek
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Metadata/v1'

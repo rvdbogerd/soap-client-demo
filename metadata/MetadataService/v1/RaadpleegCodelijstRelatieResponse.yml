@@ -1,0 +1,14 @@
+ToezichtS2S\MetadataService\v1\RaadpleegCodelijstRelatieResponse:
+    xml_root_name: RaadpleegCodelijstRelatieResponse
+    xml_root_namespace: 'http://rechtspraak.nl/MetadataService/v1'
+    properties:
+        raadpleegCodelijstRelatieResult:
+            expose: true
+            access_type: public_method
+            serialized_name: RaadpleegCodelijstRelatieResult
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MetadataService/v1'
+            accessor:
+                getter: getRaadpleegCodelijstRelatieResult
+                setter: setRaadpleegCodelijstRelatieResult
+            type: ToezichtS2S\Service\Metadata\v1\RaadpleegCodelijstRelatieAntwoordType

@@ -1,0 +1,3 @@
+ToezichtS2S\Service\DataTypes\ExtensibleDataObject:
+    xml_root_name: ExtensibleDataObject
+    xml_root_namespace: 'http://rechtspraak.nl/Service/DataTypes'

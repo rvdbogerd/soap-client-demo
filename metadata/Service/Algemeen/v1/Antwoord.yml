@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Algemeen\v1\Antwoord:
+    xml_root_name: Antwoord
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'

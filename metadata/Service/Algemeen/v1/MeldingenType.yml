@@ -1,0 +1,16 @@
+ToezichtS2S\Service\Algemeen\v1\MeldingenType:
+    properties:
+        melding:
+            expose: true
+            access_type: public_method
+            serialized_name: Melding
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getMelding
+                setter: setMelding
+            xml_list:
+                inline: true
+                entry_name: Melding
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            type: array<ToezichtS2S\Service\Algemeen\v1\MeldingType>

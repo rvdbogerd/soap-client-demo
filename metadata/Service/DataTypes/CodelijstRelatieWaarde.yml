@@ -1,0 +1,3 @@
+ToezichtS2S\Service\DataTypes\CodelijstRelatieWaarde:
+    xml_root_name: CodelijstRelatieWaarde
+    xml_root_namespace: 'http://rechtspraak.nl/Service/DataTypes'

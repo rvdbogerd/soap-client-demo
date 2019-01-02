@@ -1,0 +1,3 @@
+ToezichtS2S\Service\Metadata\Generic\CodelijstRelatieWaarden:
+    xml_root_name: CodelijstRelatieWaarden
+    xml_root_namespace: 'http://rechtspraak.nl/Service/Metadata'

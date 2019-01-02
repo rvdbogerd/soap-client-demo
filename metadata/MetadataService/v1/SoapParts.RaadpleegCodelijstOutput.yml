@@ -1,0 +1,13 @@
+ToezichtS2S\MetadataService\v1\SoapParts\RaadpleegCodelijstOutput:
+    xml_root_namespace: 'http://rechtspraak.nl/MetadataService/v1'
+    properties:
+        parameters:
+            expose: true
+            access_type: public_method
+            accessor:
+                getter: getParameters
+                setter: setParameters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MetadataService/v1'
+            serialized_name: RaadpleegCodelijstResponse
+            type: ToezichtS2S\MetadataService\v1\RaadpleegCodelijstResponse

@@ -1,0 +1,22 @@
+ToezichtS2S\Service\Metadata\v1\RaadpleegCodelijstRelatieVerzoekType:
+    properties:
+        identificatie1:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie1
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Metadata/v1'
+            accessor:
+                getter: getIdentificatie1
+                setter: setIdentificatie1
+            type: string
+        identificatie2:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie2
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Metadata/v1'
+            accessor:
+                getter: getIdentificatie2
+                setter: setIdentificatie2
+            type: string
