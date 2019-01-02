@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="PersoonService" targetNamespace="http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+    <wsp:Policy wsu:Id="soap12mtom_PersoonService_policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsoma:OptimizedMimeSerialization
+                        xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization"/>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp/>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+                <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:X509Token
+                                sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                            <wsp:Policy>
+                                <sp:RequireThumbprintReference/>
+                                <sp:WssX509V3Token10/>
+                            </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                            <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+                        </sp:SignedParts>
+                    </wsp:Policy>
+                </sp:EndorsingSupportingTokens>
+                <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportRefThumbprint/>
+                    </wsp:Policy>
+                </sp:Wss11>
+                <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:MustSupportIssuedTokens/>
+                        <sp:RequireClientEntropy/>
+                        <sp:RequireServerEntropy/>
+                    </wsp:Policy>
+                </sp:Trust10>
+                <wsaw:UsingAddressing/>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified"
+                   targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+            <xs:element name="anyType" type="xs:anyType"/>
+            <xs:element name="anyURI" type="xs:anyURI"/>
+            <xs:element name="base64Binary" type="xs:base64Binary"/>
+            <xs:element name="boolean" type="xs:boolean"/>
+            <xs:element name="byte" type="xs:byte"/>
+            <xs:element name="dateTime" type="xs:dateTime"/>
+            <xs:element name="decimal" type="xs:decimal"/>
+            <xs:element name="double" type="xs:double"/>
+            <xs:element name="float" type="xs:float"/>
+            <xs:element name="int" type="xs:int"/>
+            <xs:element name="long" type="xs:long"/>
+            <xs:element name="QName" type="xs:QName"/>
+            <xs:element name="short" type="xs:short"/>
+            <xs:element name="string" type="xs:string"/>
+            <xs:element name="unsignedByte" type="xs:unsignedByte"/>
+            <xs:element name="unsignedInt" type="xs:unsignedInt"/>
+            <xs:element name="unsignedLong" type="xs:unsignedLong"/>
+            <xs:element name="unsignedShort" type="xs:unsignedShort"/>
+            <xs:element name="char" type="tns:char"/>
+            <xs:simpleType name="char">
+                <xs:restriction base="xs:int"/>
+            </xs:simpleType>
+            <xs:element name="duration" type="tns:duration"/>
+            <xs:simpleType name="duration">
+                <xs:restriction base="xs:duration">
+                    <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+                    <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+                    <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="guid" type="tns:guid"/>
+            <xs:simpleType name="guid">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:attribute name="FactoryType" type="xs:QName"/>
+            <xs:attribute name="Id" type="xs:ID"/>
+            <xs:attribute name="Ref" type="xs:IDREF"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:complexType name="Antwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:ExtensibleDataObject" xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="OperatieContext" type="tns:AntwoordContext"/>
+                            <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Antwoord" type="tns:Antwoord"/>
+            <xs:complexType name="AntwoordContext">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q2:ExtensibleDataObject" xmlns:q2="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="ExterneReferentie" nillable="true" type="q2:String50"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="AntwoordContext" type="tns:AntwoordContext"/>
+            <xs:complexType name="Verwerkingsresultaat">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q3:ExtensibleDataObject" xmlns:q3="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="IncidentCode" nillable="true" type="q3:IdentificatieCode"/>
+                            <xs:element name="IndicatieCorrectVerwerkt" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="Meldingen" nillable="true" type="tns:Meldingen"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Verwerkingsresultaat" type="tns:Verwerkingsresultaat"/>
+            <xs:complexType name="Meldingen">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Melding" nillable="true" type="tns:Melding"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Meldingen" type="tns:Meldingen"/>
+            <xs:complexType name="Melding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q4:ExtensibleDataObject" xmlns:q4="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Code" type="tns:MeldingCode"/>
+                            <xs:element name="Omschrijving" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Melding" type="tns:Melding"/>
+            <xs:complexType name="VerzoekContext">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:AntwoordContext">
+                        <xs:sequence>
+                            <xs:element name="Organisatie" type="q5:IdentificatieCode"
+                                        xmlns:q5="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="Register" type="tns:SoortPersoonsRegister"/>
+                            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="VerzoekContext" type="tns:VerzoekContext"/>
+            <xs:complexType name="SoftwareVersie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q6:ExtensibleDataObject" xmlns:q6="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Leverancier" type="q6:String80"/>
+                            <xs:element minOccurs="0" name="Pakketnaam" nillable="true" type="q6:String50"/>
+                            <xs:element minOccurs="0" name="Versie" nillable="true" type="q6:String24"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="SoftwareVersie" type="tns:SoftwareVersie"/>
+            <xs:complexType name="BerichtMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Onderdeel" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BerichtMelding" type="tns:BerichtMelding"/>
+            <xs:complexType name="ObjectMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="q7:IdentificatieCode"
+                                        xmlns:q7="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="Type" type="q8:SoortObject"
+                                        xmlns:q8="http://rechtspraak.nl/Model/Algemeen/v1"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectMelding" type="tns:ObjectMelding"/>
+            <xs:complexType name="TestMelding">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Melding">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="TestMelding" type="tns:TestMelding"/>
+            <xs:complexType name="Verzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q9:ExtensibleDataObject" xmlns:q9="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="OperatieContext" type="tns:VerzoekContext"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Verzoek" type="tns:Verzoek"/>
+            <xs:complexType name="ObjectIdentificatie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q10:ExtensibleDataObject" xmlns:q10="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="q10:IdentificatieCode"/>
+                            <xs:element name="ModelVersie" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectIdentificatie" type="tns:ObjectIdentificatie"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/Service/DataTypes"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:complexType name="ExtensibleDataObject">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:element name="ExtensibleDataObject" type="tns:ExtensibleDataObject"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String50">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String50" type="tns:String50"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="IdentificatieCode">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="IdentificatieCode" type="tns:IdentificatieCode"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:simpleType name="MeldingCode">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="MeldingCode" type="tns:MeldingCode"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://rechtspraak.nl/Service/Algemeen/v1">
+            <xs:simpleType name="SoortPersoonsRegister">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortPersoonsRegister" type="tns:SoortPersoonsRegister"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String80">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="80"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String80" type="tns:String80"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String24">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="24"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String24" type="tns:String24"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Model/Algemeen/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Model/Algemeen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:simpleType name="SoortObject">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortObject" type="tns:SoortObject"/>
+            <xs:complexType name="ObjectIdentificatie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:ExtensibleDataObject" xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element form="qualified" name="Identificatie" type="q1:IdentificatieCode"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ObjectIdentificatie" type="tns:ObjectIdentificatie"/>
+            <xs:complexType name="ModelVersies">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" form="qualified" name="ModelVersie" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="ModelVersies" type="tns:ModelVersies"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"/>
+            <xs:complexType name="HaalOpOnderToezichtGesteldeAntwoord">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:Antwoord" xmlns:q1="http://rechtspraak.nl/Service/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="OnderToezichtGestelde" type="q2:NatuurlijkPersoon"
+                                        xmlns:q2="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="HaalOpOnderToezichtGesteldeAntwoord" type="tns:HaalOpOnderToezichtGesteldeAntwoord"/>
+            <xs:complexType name="HaalOpOnderToezichtGesteldeVerzoek">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q3:Verzoek" xmlns:q3="http://rechtspraak.nl/Service/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="PersoonIdentificatie" type="q3:ObjectIdentificatie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="HaalOpOnderToezichtGesteldeVerzoek" type="tns:HaalOpOnderToezichtGesteldeVerzoek"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:import namespace="http://rechtspraak.nl/Model/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"/>
+            <xs:complexType name="NatuurlijkPersoon">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:PersoonDetail">
+                        <xs:sequence>
+                            <xs:element name="Achternaam" type="tns:Achternaam"/>
+                            <xs:element minOccurs="0" name="Geboorte" nillable="true" type="tns:Geboorte"/>
+                            <xs:element minOccurs="0" name="Geslacht" nillable="true" type="tns:SoortGeslacht"/>
+                            <xs:element minOccurs="0" name="Partnernaam" nillable="true" type="tns:Partnernaam"/>
+                            <xs:element minOccurs="0" name="Voorletters" nillable="true" type="q1:String24"
+                                        xmlns:q1="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Voornamen" nillable="true" type="q2:String300"
+                                        xmlns:q2="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="NatuurlijkPersoon" type="tns:NatuurlijkPersoon"/>
+            <xs:complexType name="PersoonDetail">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Persoon">
+                        <xs:sequence>
+                            <xs:element name="Adressen" type="tns:Adressen"/>
+                            <xs:element minOccurs="0" name="DetailGegevens" nillable="true" type="q3:Gegevensgroepen"
+                                        xmlns:q3="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1"/>
+                            <xs:element name="GerelateerdePersonen" type="tns:GerelateerdePersonen"/>
+                            <xs:element name="PersoonSoort" type="tns:SoortPersoon"/>
+                            <xs:element minOccurs="0" name="Registraties" nillable="true"
+                                        type="tns:RegisterRegistraties"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="PersoonDetail" type="tns:PersoonDetail"/>
+            <xs:complexType name="Persoon">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q4:ObjectIdentificatie" xmlns:q4="http://rechtspraak.nl/Model/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="Register" type="tns:SoortPersoonsRegister"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Persoon" type="tns:Persoon"/>
+            <xs:complexType name="Adressen">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Adres" nillable="true" type="tns:Adres"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Adressen" type="tns:Adressen"/>
+            <xs:complexType name="Adres">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q5:ExtensibleDataObject" xmlns:q5="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="SoortAdres" type="tns:SoortAdres"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Adres" type="tns:Adres"/>
+            <xs:complexType name="GerelateerdePersonen">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="GerelateerdePersoon" nillable="true"
+                                type="tns:GerelateerdePersoon"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="GerelateerdePersonen" type="tns:GerelateerdePersonen"/>
+            <xs:complexType name="GerelateerdePersoon">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q6:ExtensibleDataObject" xmlns:q6="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="IsActueel" type="xs:boolean"/>
+                            <xs:element name="Persoon" type="tns:PersoonReferentie"/>
+                            <xs:element name="Relatie" type="tns:SoortPersoonRelatie"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="GerelateerdePersoon" type="tns:GerelateerdePersoon"/>
+            <xs:complexType name="PersoonReferentie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Persoon">
+                        <xs:sequence>
+                            <xs:element name="ModelVersies" type="q7:ModelVersies"
+                                        xmlns:q7="http://rechtspraak.nl/Model/Algemeen/v1"/>
+                            <xs:element name="PersoonSoort" type="tns:SoortPersoon"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="PersoonReferentie" type="tns:PersoonReferentie"/>
+            <xs:complexType name="RegisterRegistraties">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Registratie" nillable="true"
+                                type="tns:RegisterRegistratie"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="RegisterRegistraties" type="tns:RegisterRegistraties"/>
+            <xs:complexType name="RegisterRegistratie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q8:ExtensibleDataObject" xmlns:q8="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="q8:IdentificatieCode"/>
+                            <xs:element name="Register" type="tns:SoortPersoonsRegister"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="RegisterRegistratie" type="tns:RegisterRegistratie"/>
+            <xs:complexType name="Achternaam">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q9:ExtensibleDataObject" xmlns:q9="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element name="Naam" type="q9:String200"/>
+                            <xs:element minOccurs="0" name="Voorvoegsel" nillable="true" type="q9:String24"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Achternaam" type="tns:Achternaam"/>
+            <xs:complexType name="Geboorte">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q10:ExtensibleDataObject" xmlns:q10="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Land" nillable="true" type="tns:Land"/>
+                            <xs:element minOccurs="0" name="Plaats" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Geboorte" type="tns:Geboorte"/>
+            <xs:simpleType name="SoortGeslacht">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Onbekend">
+                        <xs:annotation>
+                            <xs:appinfo>
+                                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3
+                                </EnumerationValue>
+                            </xs:appinfo>
+                        </xs:annotation>
+                    </xs:enumeration>
+                    <xs:enumeration value="Man"/>
+                    <xs:enumeration value="Vrouw"/>
+                    <xs:enumeration value="Niet gespecificeerd"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortGeslacht" type="tns:SoortGeslacht"/>
+            <xs:complexType name="Partnernaam">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Achternaam">
+                        <xs:sequence>
+                            <xs:element name="AanduidingNaamgebruik" type="tns:SoortAanduidingNaamgebruik"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Partnernaam" type="tns:Partnernaam"/>
+            <xs:simpleType name="SoortAanduidingNaamgebruik">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Eigen geslachtsnaam"/>
+                    <xs:enumeration value="Geslachtsnaam partner"/>
+                    <xs:enumeration value="Geslachtsnaam partner na eigen geslachtsnaam"/>
+                    <xs:enumeration value="Geslachtsnaam partner voor eigen geslachtsnaam"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortAanduidingNaamgebruik" type="tns:SoortAanduidingNaamgebruik"/>
+            <xs:complexType name="GeboorteDatum">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Geboorte">
+                        <xs:sequence>
+                            <xs:element name="Datum" type="xs:date"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="GeboorteDatum" type="tns:GeboorteDatum"/>
+            <xs:complexType name="GeboorteJaar">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Geboorte">
+                        <xs:sequence>
+                            <xs:element name="Jaar" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="GeboorteJaar" type="tns:GeboorteJaar"/>
+            <xs:complexType name="BuitenlandsAdres">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Adres">
+                        <xs:sequence>
+                            <xs:element name="Land" type="tns:Land"/>
+                            <xs:element name="Regel1" type="q11:String35"
+                                        xmlns:q11="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Regel2" nillable="true" type="q12:String35"
+                                        xmlns:q12="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Regel3" nillable="true" type="q13:String35"
+                                        xmlns:q13="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Regel4" nillable="true" type="q14:String35"
+                                        xmlns:q14="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Regel5" nillable="true" type="q15:String35"
+                                        xmlns:q15="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Regel6" nillable="true" type="q16:String35"
+                                        xmlns:q16="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="BuitenlandsAdres" type="tns:BuitenlandsAdres"/>
+            <xs:complexType name="NederlandsAdres">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:Adres">
+                        <xs:sequence>
+                            <xs:element name="Woonplaats" type="q17:String24"
+                                        xmlns:q17="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="NederlandsAdres" type="tns:NederlandsAdres"/>
+            <xs:complexType name="AdresOpenbareRuimte">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:NederlandsAdres">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Huisletter" nillable="true" type="q18:String1"
+                                        xmlns:q18="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="Huisnummer" type="xs:int"/>
+                            <xs:element minOccurs="0" name="HuisnummerToevoeging" nillable="true" type="q19:String4"
+                                        xmlns:q19="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="NaamOpenbareRuimte" type="q20:String80"
+                                        xmlns:q20="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Postcode" nillable="true" type="q21:Postcode"
+                                        xmlns:q21="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element name="TypeOpenbareRuimte" type="tns:SoortOpenbareRuimte"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="AdresOpenbareRuimte" type="tns:AdresOpenbareRuimte"/>
+            <xs:simpleType name="SoortOpenbareRuimte">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Weg"/>
+                    <xs:enumeration value="Water"/>
+                    <xs:enumeration value="Spoorbaan"/>
+                    <xs:enumeration value="Terrein"/>
+                    <xs:enumeration value="Kunstwerk"/>
+                    <xs:enumeration value="Landschappelijk gebied"/>
+                    <xs:enumeration value="Administratief gebied"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="SoortOpenbareRuimte" type="tns:SoortOpenbareRuimte"/>
+            <xs:complexType name="FysiekAdres">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:NederlandsAdres">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="Huisletter" nillable="true" type="q22:String1"
+                                        xmlns:q22="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Huisnummer" nillable="true" type="xs:int"/>
+                            <xs:element minOccurs="0" name="HuisnummerToevoeging" nillable="true" type="q23:String4"
+                                        xmlns:q23="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Postcode" nillable="true" type="q24:Postcode"
+                                        xmlns:q24="http://rechtspraak.nl/Service/DataTypes"/>
+                            <xs:element minOccurs="0" name="Straat" nillable="true" type="q25:String200"
+                                        xmlns:q25="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="FysiekAdres" type="tns:FysiekAdres"/>
+            <xs:complexType name="PostbusAdres">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:NederlandsAdres">
+                        <xs:sequence>
+                            <xs:element name="PostbusNummer" type="xs:int"/>
+                            <xs:element minOccurs="0" name="Postcode" nillable="true" type="q26:String24"
+                                        xmlns:q26="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="PostbusAdres" type="tns:PostbusAdres"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:simpleType name="SoortPersoonsRegister">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortPersoonsRegister" type="tns:SoortPersoonsRegister"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:simpleType name="SoortAdres">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortAdres" type="tns:SoortAdres"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1">
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:complexType name="Gegevensgroepen">
+                <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Gegevensgroep" nillable="true"
+                                type="tns:DetailGegevensGroep"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="Gegevensgroepen" type="tns:Gegevensgroepen"/>
+            <xs:complexType name="DetailGegevensGroep">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:ExtensibleDataObject" xmlns:q1="http://rechtspraak.nl/Service/DataTypes">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="DetailGegevensGroep" type="tns:DetailGegevensGroep"/>
+            <xs:complexType name="ExterneIdentificatie">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="tns:DetailGegevensGroep">
+                        <xs:sequence>
+                            <xs:element name="Identificatie" type="q2:IdentificatieCode"
+                                        xmlns:q2="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="ExterneIdentificatie" type="tns:ExterneIdentificatie"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:simpleType name="SoortPersoon">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortPersoon" type="tns:SoortPersoon"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:simpleType name="SoortPersoonRelatie">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="SoortPersoonRelatie" type="tns:SoortPersoonRelatie"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String200">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="200"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String200" type="tns:String200"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1">
+            <xs:simpleType name="Land">
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:element name="Land" type="tns:Land"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String300">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="300"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String300" type="tns:String300"/>
+        </xs:schema>
+        <!--<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">-->
+            <!--<xs:element name="date" type="xs:date"/>-->
+        <!--</xs:schema>-->
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String35">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="35"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String35" type="tns:String35"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String1">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String1" type="tns:String1"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="String4">
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="4"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="String4" type="tns:String4"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://rechtspraak.nl/Service/DataTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/Service/DataTypes">
+            <xs:simpleType name="Postcode">
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="[1-9][0-9][0-9][0-9][A-Z][A-Z]"/>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:element name="Postcode" type="tns:Postcode"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified" targetNamespace="http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:tns="http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1">
+            <xs:import namespace="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1"/>
+            <xs:import namespace="http://rechtspraak.nl/Service/DataTypes"/>
+            <xs:complexType name="Alias">
+                <xs:complexContent mixed="false">
+                    <xs:extension base="q1:DetailGegevensGroep"
+                                  xmlns:q1="http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1">
+                        <xs:sequence>
+                            <xs:element name="Nummer" type="q2:IdentificatieCode"
+                                        xmlns:q2="http://rechtspraak.nl/Service/DataTypes"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:element name="Alias" type="tns:Alias"/>
+        </xs:schema>
+        <xs:schema elementFormDefault="qualified"
+                   targetNamespace="http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:import namespace="http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1"/>
+            <xs:element name="HaalOpOnderToezichtGestelde">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="verzoek" nillable="true"
+                                    type="q1:HaalOpOnderToezichtGesteldeVerzoek"
+                                    xmlns:q1="http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="HaalOpOnderToezichtGesteldeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="HaalOpOnderToezichtGesteldeResult" nillable="true"
+                                    type="q2:HaalOpOnderToezichtGesteldeAntwoord"
+                                    xmlns:q2="http://rechtspraak.nl/MijnRechtspraak/Service/Personen/v1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="PersoonService_HaalOpOnderToezichtGestelde_InputMessage">
+        <wsdl:part name="parameters" element="tns:HaalOpOnderToezichtGestelde"/>
+    </wsdl:message>
+    <wsdl:message name="PersoonService_HaalOpOnderToezichtGestelde_OutputMessage">
+        <wsdl:part name="parameters" element="tns:HaalOpOnderToezichtGesteldeResponse"/>
+    </wsdl:message>
+    <wsdl:message name="PersoonService_HaalOpOnderToezichtGestelde_AntwoordFault_FaultMessage">
+        <wsdl:part name="detail" element="q67:Antwoord" xmlns:q67="http://rechtspraak.nl/Service/Algemeen/v1"/>
+    </wsdl:message>
+    <wsdl:portType name="PersoonService">
+        <wsdl:operation name="HaalOpOnderToezichtGestelde">
+            <wsdl:input wsaw:Action="http://rechtspraak.nl/MijnRechtspraak/Service/PersoonService/HaalOp/v1"
+                        message="tns:PersoonService_HaalOpOnderToezichtGestelde_InputMessage"/>
+            <wsdl:output
+                    wsaw:Action="http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1/PersoonService/HaalOpOnderToezichtGesteldeResponse"
+                    message="tns:PersoonService_HaalOpOnderToezichtGestelde_OutputMessage"/>
+            <wsdl:fault
+                    wsaw:Action="http://rechtspraak.nl/MijnRechtspraak/PersoonService/v1/PersoonService/HaalOpOnderToezichtGesteldeAntwoordFault"
+                    name="AntwoordFault"
+                    message="tns:PersoonService_HaalOpOnderToezichtGestelde_AntwoordFault_FaultMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="soap12mtom_PersoonService" type="tns:PersoonService">
+        <wsp:PolicyReference URI="#soap12mtom_PersoonService_policy"/>
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="HaalOpOnderToezichtGestelde">
+            <soap12:operation soapAction="http://rechtspraak.nl/MijnRechtspraak/Service/PersoonService/HaalOp/v1"
+                              style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="AntwoordFault">
+                <soap12:fault use="literal" name="AntwoordFault" namespace=""/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="PersoonService">
+        <wsdl:port name="soap12mtom_PersoonService" binding="tns:soap12mtom_PersoonService">
+            <soap12:address location="https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/persoon"/>
+            <wsa10:EndpointReference>
+                <wsa10:Address>https://api.a-rechtspraak.nl/mijnrechtspraak-test/v1/soap12mtom/persoon</wsa10:Address>
+            </wsa10:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

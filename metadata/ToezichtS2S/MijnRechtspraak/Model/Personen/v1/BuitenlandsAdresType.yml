@@ -1,0 +1,72 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\BuitenlandsAdresType:
+    properties:
+        land:
+            expose: true
+            access_type: public_method
+            serialized_name: Land
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getLand
+                setter: setLand
+            type: string
+        regel1:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel1
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel1
+                setter: setRegel1
+            type: string
+        regel2:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel2
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel2
+                setter: setRegel2
+            type: string
+        regel3:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel3
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel3
+                setter: setRegel3
+            type: string
+        regel4:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel4
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel4
+                setter: setRegel4
+            type: string
+        regel5:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel5
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel5
+                setter: setRegel5
+            type: string
+        regel6:
+            expose: true
+            access_type: public_method
+            serialized_name: Regel6
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegel6
+                setter: setRegel6
+            type: string

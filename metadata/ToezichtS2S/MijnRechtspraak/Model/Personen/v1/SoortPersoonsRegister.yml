@@ -1,0 +1,12 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\SoortPersoonsRegister:
+    xml_root_name: 'ns-f94f33e2:SoortPersoonsRegister'
+    xml_root_namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string

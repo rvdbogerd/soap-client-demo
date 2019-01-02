@@ -1,0 +1,22 @@
+ToezichtS2S\Service\Algemeen\v1\ObjectIdentificatieType:
+    properties:
+        identificatie:
+            expose: true
+            access_type: public_method
+            serialized_name: Identificatie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getIdentificatie
+                setter: setIdentificatie
+            type: string
+        modelVersie:
+            expose: true
+            access_type: public_method
+            serialized_name: ModelVersie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/Service/Algemeen/v1'
+            accessor:
+                getter: getModelVersie
+                setter: setModelVersie
+            type: int

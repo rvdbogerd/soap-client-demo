@@ -1,0 +1,62 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\NatuurlijkPersoonType:
+    properties:
+        achternaam:
+            expose: true
+            access_type: public_method
+            serialized_name: Achternaam
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getAchternaam
+                setter: setAchternaam
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\AchternaamType
+        geboorte:
+            expose: true
+            access_type: public_method
+            serialized_name: Geboorte
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getGeboorte
+                setter: setGeboorte
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\GeboorteType
+        geslacht:
+            expose: true
+            access_type: public_method
+            serialized_name: Geslacht
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getGeslacht
+                setter: setGeslacht
+            type: string
+        partnernaam:
+            expose: true
+            access_type: public_method
+            serialized_name: Partnernaam
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getPartnernaam
+                setter: setPartnernaam
+            type: ToezichtS2S\MijnRechtspraak\Model\Personen\v1\PartnernaamType
+        voorletters:
+            expose: true
+            access_type: public_method
+            serialized_name: Voorletters
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getVoorletters
+                setter: setVoorletters
+            type: string
+        voornamen:
+            expose: true
+            access_type: public_method
+            serialized_name: Voornamen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getVoornamen
+                setter: setVoornamen
+            type: string

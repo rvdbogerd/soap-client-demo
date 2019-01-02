@@ -1,0 +1,16 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\RegisterRegistratiesType:
+    properties:
+        registratie:
+            expose: true
+            access_type: public_method
+            serialized_name: Registratie
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegistratie
+                setter: setRegistratie
+            xml_list:
+                inline: true
+                entry_name: Registratie
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Personen\v1\RegisterRegistratieType>

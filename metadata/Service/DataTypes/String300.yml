@@ -1,0 +1,12 @@
+ToezichtS2S\Service\DataTypes\String300:
+    xml_root_name: 'ns-6cd01b23:String300'
+    xml_root_namespace: 'http://rechtspraak.nl/Service/DataTypes'
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: string

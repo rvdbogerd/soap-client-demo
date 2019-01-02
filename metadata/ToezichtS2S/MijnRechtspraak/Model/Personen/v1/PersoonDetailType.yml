@@ -1,0 +1,72 @@
+ToezichtS2S\MijnRechtspraak\Model\Personen\v1\PersoonDetailType:
+    properties:
+        adressen:
+            expose: true
+            access_type: public_method
+            serialized_name: Adressen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getAdressen
+                setter: setAdressen
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Personen\v1\AdresType>
+            xml_list:
+                inline: false
+                entry_name: Adres
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+        detailGegevens:
+            expose: true
+            access_type: public_method
+            serialized_name: DetailGegevens
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getDetailGegevens
+                setter: setDetailGegevens
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1\DetailGegevensGroepType>
+            xml_list:
+                inline: false
+                entry_name: Gegevensgroep
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Algemeen/v1'
+        gerelateerdePersonen:
+            expose: true
+            access_type: public_method
+            serialized_name: GerelateerdePersonen
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getGerelateerdePersonen
+                setter: setGerelateerdePersonen
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Personen\v1\GerelateerdePersoonType>
+            xml_list:
+                inline: false
+                entry_name: GerelateerdePersoon
+                skip_when_empty: false
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+        persoonSoort:
+            expose: true
+            access_type: public_method
+            serialized_name: PersoonSoort
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getPersoonSoort
+                setter: setPersoonSoort
+            type: string
+        registraties:
+            expose: true
+            access_type: public_method
+            serialized_name: Registraties
+            xml_element:
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
+            accessor:
+                getter: getRegistraties
+                setter: setRegistraties
+            type: array<ToezichtS2S\MijnRechtspraak\Model\Personen\v1\RegisterRegistratieType>
+            xml_list:
+                inline: false
+                entry_name: Registratie
+                skip_when_empty: true
+                namespace: 'http://rechtspraak.nl/MijnRechtspraak/Model/Personen/v1'
