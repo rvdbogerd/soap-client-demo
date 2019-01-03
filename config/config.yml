@@ -28,8 +28,6 @@ soap_client:
     'http://rechtspraak.nl/MijnRechtspraak/Model/Zaken/v1':       'ToezichtS2S\MijnRechtspraak\Model\Zaken\v1'
     'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v1': 'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1'
 
-    'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2': 'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2'
-
     # v2 services:
     'http://rechtspraak.nl/ToezichtS2S/Algemeen/v2':              'ToezichtS2S\Algemeen\v2'
     'http://rechtspraak.nl/ToezichtS2S/Bericht/v2':               'ToezichtS2S\Bericht\v2'
@@ -37,6 +35,7 @@ soap_client:
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Sjabloon':    'ToezichtS2S\Formulier\v2\Sjabloon'
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Opmaak':      'ToezichtS2S\Formulier\v2\Opmaak'
     'http://rechtspraak.nl/ToezichtS2S/Formulier/v2/Data':        'ToezichtS2S\Formulier\v2\Data'
+    'http://rechtspraak.nl/MijnRechtspraak/Toezicht/Model/Zaken/v2': 'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2'
     'http://rechtspraak.nl/ToezichtS2S/Taak/v2':                  'ToezichtS2S\Taak\v2'
 
   destinations_php:
@@ -64,14 +63,13 @@ soap_client:
     'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          src/ToezichtS2S/MijnRechtspraak/Model/Algemeen/v1
     'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1':    src/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v1
 
-    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    src/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2
-
     'ToezichtS2S\Algemeen\v2':                                src/ToezichtS2S/Algemeen/v2
     'ToezichtS2S\Bericht\v2':                                 src/ToezichtS2S/Bericht/v2
     'ToezichtS2S\Formulier\v2':                               src/ToezichtS2S/Formulier/v2
     'ToezichtS2S\Formulier\v2\Sjabloon':                      src/ToezichtS2S/Formulier/v2/Sjabloon
     'ToezichtS2S\Formulier\v2\Opmaak':                        src/ToezichtS2S/Formulier/v2/Opmaak
     'ToezichtS2S\Formulier\v2\Data':                          src/ToezichtS2S/Formulier/v2/Data
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    src/ToezichtS2S/MijnRechtspraak/Toezicht/Model/Zaken/v2
     'ToezichtS2S\Taak\v2':                                    src/ToezichtS2S/Taak/v2
 
   destinations_jms:
@@ -99,14 +97,13 @@ soap_client:
     'ToezichtS2S\MijnRechtspraak\Model\Algemeen\v1':          metadata/MijnRechtspraak/Model/Algemeen/v1
     'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v1':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v1
 
-    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v2
-
     'ToezichtS2S\Algemeen\v2':                                metadata/Algemeen/v2
     'ToezichtS2S\Bericht\v2':                                 metadata/Bericht/v2
     'ToezichtS2S\Formulier\v2':                               metadata/Formulier/v2
     'ToezichtS2S\Formulier\v2\Sjabloon':                      metadata/Formulier/v2/Sjabloon
     'ToezichtS2S\Formulier\v2\Opmaak':                        metadata/Formulier/v2/Opmaak
     'ToezichtS2S\Formulier\v2\Data':                          metadata/Formulier/v2/Data
+    'ToezichtS2S\MijnRechtspraak\Toezicht\Model\Zaken\v2':    metadata/MijnRechtspraak/Toezicht/Model/Zaken/v2
     'ToezichtS2S\Taak\v2':                                    metadata/Taak/v2
 
   metadata:

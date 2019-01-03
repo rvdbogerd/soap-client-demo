@@ -56,11 +56,6 @@ class HeaderSignHandler implements EventSubscriberInterface
         /** DomDocument $document */
         $document = $visitor->getDocument();
 
-        dump($document);
-
-        dump('fooooo');
-        dump($document);
-        die();
         $request = $this->requestFormatter->format($document, $soapOperation['action']);
     }
 //
